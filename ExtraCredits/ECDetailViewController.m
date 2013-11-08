@@ -2,7 +2,7 @@
 //  ECDetailViewController.m
 //  ExtraCredits
 //
-//  Created by Drew Guarnera on 11/8/13.
+//  Created by Drew Guarnera, Matthew Watzman, Evan Purkhiser on 11/8/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
