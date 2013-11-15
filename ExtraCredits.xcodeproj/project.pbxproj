@@ -26,6 +26,7 @@
 		3ADE0CB5182D8E01006C5424 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C8D182D8E01006C5424 /* CoreData.framework */; };
 		3ADE0CBD182D8E01006C5424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */; };
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
+		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3ADE0CBA182D8E01006C5424 /* ExtraCreditsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExtraCreditsTests-Info.plist"; sourceTree = "<group>"; };
 		3ADE0CBC182D8E01006C5424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtraCreditsTests.m; sourceTree = "<group>"; };
+		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		3ADE0C90182D8E01006C5424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86BD6BBE1836CD97007856EB /* CourseSeed.plist */,
 				3ADE0C91182D8E01006C5424 /* ExtraCredits-Info.plist */,
 				3ADE0C92182D8E01006C5424 /* InfoPlist.strings */,
 				3ADE0C95182D8E01006C5424 /* main.m */,
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */,
 				3ADE0CA0182D8E01006C5424 /* Main_iPad.storyboard in Resources */,
 				3ADE0CAB182D8E01006C5424 /* Images.xcassets in Resources */,
 				3ADE0C9D182D8E01006C5424 /* Main_iPhone.storyboard in Resources */,
@@ -491,6 +495,7 @@
 				3ADE0CC4182D8E01006C5424 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3ADE0CC5182D8E01006C5424 /* Build configuration list for PBXNativeTarget "ExtraCreditsTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				3ADE0CC7182D8E01006C5424 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
