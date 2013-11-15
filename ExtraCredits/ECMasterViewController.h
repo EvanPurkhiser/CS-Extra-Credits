@@ -12,11 +12,17 @@
 
 #import <CoreData/CoreData.h>
 
-@interface ECMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface ECMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+    NSMutableArray *courses_;
+    NSString *documentPlistPath;
+}
+
+@property (nonatomic, retain) NSMutableArray* courses;
 
 @property (strong, nonatomic) ECDetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

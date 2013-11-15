@@ -16,6 +16,8 @@
 
 @implementation ECMasterViewController
 
+@synthesize courses = courses_;
+
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -35,7 +37,22 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (ECDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    NSLog(@"Hello universe.");
+    // Get paths from the root directory
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // Get documents path
+    NSString* documentsPath = [paths objectAtIndex:0];
+    
+    // Save plist file (CourseSeed.plist) path to variable
+    self->documentPlistPath = [documentsPath stringByAppendingString:@"CourseSeed"];
+    
+    // If the plist is not in the saved directory, then use the main bundle plist (also CourseSeed.plist)
+    if (![[NSFileManager defaultManager] fileExistsAtPath:self->documentPlistPath]) {
+        self->documentPlistPath = [[NSBundle mainBundle] pathForResource:@"CourseSeed" ofType:@"plist"];
+    }
+    
+    // Initialize contents of courses_ array with contents of plist
+    courses_ = [[NSMutableArray alloc] initWithContentsOfFile:self->documentPlistPath];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,9 +83,10 @@
 
 #pragma mark - Table View
 
+// Tell how many sections are in table view (only 1 section)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -87,7 +105,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
