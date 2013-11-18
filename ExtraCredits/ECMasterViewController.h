@@ -13,11 +13,11 @@
 #import <CoreData/CoreData.h>
 
 @interface ECMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
-    NSMutableArray *courses_;
+    NSMutableDictionary *courses_;
     NSString *documentPlistPath;
 }
 
-@property (nonatomic, retain) NSMutableArray* courses;
+@property (nonatomic, retain) NSMutableDictionary* courses;
 
 @property (strong, nonatomic) ECDetailViewController *detailViewController;
 

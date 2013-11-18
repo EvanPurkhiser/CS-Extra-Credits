@@ -52,7 +52,7 @@
     }
     
     // Initialize contents of courses_ array with contents of plist
-    courses_ = [[NSMutableArray alloc] initWithContentsOfFile:self->documentPlistPath];
+    courses_ = [[NSMutableDictionary alloc] initWithContentsOfFile:self->documentPlistPath];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,16 +89,21 @@
     return 1;
 }
 
+// Return the number of total courses
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return [[self.courses objectForKey:@"courseList"] count];
 }
 
+// Load the courses into the table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Find the cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    
+    // Set text label for cell
+    cell.textLabel.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
+    
     return cell;
 }
 
