@@ -11,6 +11,6 @@
 
 @interface LoadedData (ECCourseLoader)
 
-+ (void)updateCourseData;
++ (void)updateCourseData:(NSManagedObjectContext *)context;
 
 @end

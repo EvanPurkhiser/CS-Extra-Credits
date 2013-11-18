@@ -58,7 +58,7 @@
 
 
     // DO MAGIC TO LOAD IN COURSES INTO THE TABLES
-    [LoadedData updateCourseData];
+    [LoadedData updateCourseData:self.managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning
