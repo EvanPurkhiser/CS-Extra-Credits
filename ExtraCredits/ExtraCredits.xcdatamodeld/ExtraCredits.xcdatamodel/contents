@@ -10,8 +10,6 @@
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTags" syncable="YES"/>
     </entity>
     <entity name="CourseTags" representedClassName="CourseTags" syncable="YES">
-        <attribute name="courseNumber" optional="YES" syncable="YES"/>
-        <attribute name="courseSubject" optional="YES" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES">

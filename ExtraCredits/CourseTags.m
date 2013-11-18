@@ -12,7 +12,5 @@
 @implementation CourseTags
 
 @dynamic tag;
-@dynamic courseSubject;
-@dynamic courseNumber;
 
 @end

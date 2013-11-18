@@ -13,7 +13,5 @@
 @interface CourseTags : NSManagedObject
 
 @property (nonatomic, retain) NSString * tag;
-@property (nonatomic, retain) UNKNOWN_TYPE courseSubject;
-@property (nonatomic, retain) UNKNOWN_TYPE courseNumber;
 
 @end
