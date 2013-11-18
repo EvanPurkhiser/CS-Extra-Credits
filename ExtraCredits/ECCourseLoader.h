@@ -13,4 +13,6 @@
 
 + (void)updateCourseData:(NSManagedObjectContext *)context;
 
+- (void)initializeNewCourseData:(NSDictionary *)data;
+
 @end
