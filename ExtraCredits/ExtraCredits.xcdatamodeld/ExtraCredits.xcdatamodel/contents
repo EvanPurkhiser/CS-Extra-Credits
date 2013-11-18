@@ -5,8 +5,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" syncable="YES"/>
-        <relationship name="prerequisits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" syncable="YES"/>
+        <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="alternatives" inverseEntity="Course" syncable="YES"/>
+        <relationship name="prerequisits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisits" inverseEntity="Course" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTags" syncable="YES"/>
     </entity>
     <entity name="CourseTags" representedClassName="CourseTags" syncable="YES">
