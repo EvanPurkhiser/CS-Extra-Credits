@@ -26,6 +26,9 @@
 		3ADE0CB5182D8E01006C5424 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C8D182D8E01006C5424 /* CoreData.framework */; };
 		3ADE0CBD182D8E01006C5424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */; };
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
+		86182C69183ABEE100245C21 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C68183ABEE100245C21 /* Course.m */; };
+		86182C6C183ABEE100245C21 /* CourseTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C6B183ABEE100245C21 /* CourseTags.m */; };
+		86182C6F183ABEE100245C21 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C6E183ABEE100245C21 /* Subject.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,12 @@
 		3ADE0CBA182D8E01006C5424 /* ExtraCreditsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExtraCreditsTests-Info.plist"; sourceTree = "<group>"; };
 		3ADE0CBC182D8E01006C5424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtraCreditsTests.m; sourceTree = "<group>"; };
+		86182C67183ABEE100245C21 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		86182C68183ABEE100245C21 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		86182C6A183ABEE100245C21 /* CourseTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTags.h; sourceTree = "<group>"; };
+		86182C6B183ABEE100245C21 /* CourseTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTags.m; sourceTree = "<group>"; };
+		86182C6D183ABEE100245C21 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		86182C6E183ABEE100245C21 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +136,7 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
+				86182C70183ABEEB00245C21 /* Models */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
 				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
@@ -170,6 +180,19 @@
 				3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86182C70183ABEEB00245C21 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				86182C6D183ABEE100245C21 /* Subject.h */,
+				86182C6E183ABEE100245C21 /* Subject.m */,
+				86182C6A183ABEE100245C21 /* CourseTags.h */,
+				86182C6B183ABEE100245C21 /* CourseTags.m */,
+				86182C67183ABEE100245C21 /* Course.h */,
+				86182C68183ABEE100245C21 /* Course.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +299,9 @@
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
+				86182C6F183ABEE100245C21 /* Subject.m in Sources */,
+				86182C6C183ABEE100245C21 /* CourseTags.m in Sources */,
+				86182C69183ABEE100245C21 /* Course.m in Sources */,
 				3ADE0CA9182D8E01006C5424 /* ECDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
