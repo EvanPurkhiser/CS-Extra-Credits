@@ -9,6 +9,8 @@
 #import "ECMasterViewController.h"
 
 #import "ECDetailViewController.h"
+#import "ECCourseLoader.h"
+#import "LoadedData.h"
 
 @interface ECMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -53,6 +55,10 @@
     
     // Initialize contents of courses_ array with contents of plist
     courses_ = [[NSMutableDictionary alloc] initWithContentsOfFile:self->documentPlistPath];
+
+
+    // DO MAGIC TO LOAD IN COURSES INTO THE TABLES
+    [LoadedData updateCourseData];
 }
 
 - (void)didReceiveMemoryWarning

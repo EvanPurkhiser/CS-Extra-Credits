@@ -26,9 +26,11 @@
 		3ADE0CB5182D8E01006C5424 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C8D182D8E01006C5424 /* CoreData.framework */; };
 		3ADE0CBD182D8E01006C5424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */; };
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
-		86182C69183ABEE100245C21 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C68183ABEE100245C21 /* Course.m */; };
-		86182C6C183ABEE100245C21 /* CourseTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C6B183ABEE100245C21 /* CourseTags.m */; };
-		86182C6F183ABEE100245C21 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C6E183ABEE100245C21 /* Subject.m */; };
+		86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C72183ABF8B00245C21 /* ECCourseLoader.m */; };
+		86182C82183AC45A00245C21 /* CourseTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C81183AC45A00245C21 /* CourseTags.m */; };
+		86182C85183AC45A00245C21 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C84183AC45A00245C21 /* Subject.m */; };
+		86182C88183AC45B00245C21 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C87183AC45B00245C21 /* Course.m */; };
+		86182C8B183AC45B00245C21 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C8A183AC45B00245C21 /* LoadedData.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
 /* End PBXBuildFile section */
 
@@ -67,12 +69,16 @@
 		3ADE0CBA182D8E01006C5424 /* ExtraCreditsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExtraCreditsTests-Info.plist"; sourceTree = "<group>"; };
 		3ADE0CBC182D8E01006C5424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtraCreditsTests.m; sourceTree = "<group>"; };
-		86182C67183ABEE100245C21 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		86182C68183ABEE100245C21 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		86182C6A183ABEE100245C21 /* CourseTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTags.h; sourceTree = "<group>"; };
-		86182C6B183ABEE100245C21 /* CourseTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTags.m; sourceTree = "<group>"; };
-		86182C6D183ABEE100245C21 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		86182C6E183ABEE100245C21 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		86182C71183ABF8B00245C21 /* ECCourseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCourseLoader.h; sourceTree = "<group>"; };
+		86182C72183ABF8B00245C21 /* ECCourseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCourseLoader.m; sourceTree = "<group>"; };
+		86182C80183AC45A00245C21 /* CourseTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTags.h; sourceTree = "<group>"; };
+		86182C81183AC45A00245C21 /* CourseTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTags.m; sourceTree = "<group>"; };
+		86182C83183AC45A00245C21 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		86182C84183AC45A00245C21 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		86182C86183AC45B00245C21 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		86182C87183AC45B00245C21 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		86182C89183AC45B00245C21 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
+		86182C8A183AC45B00245C21 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +142,7 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
-				86182C70183ABEEB00245C21 /* Models */,
+				86182C8C183AC46700245C21 /* Models */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
 				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
@@ -148,6 +154,8 @@
 				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
 				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
 				3ADE0C90182D8E01006C5424 /* Supporting Files */,
+				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
+				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
 			);
 			path = ExtraCredits;
 			sourceTree = "<group>";
@@ -182,15 +190,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		86182C70183ABEEB00245C21 /* Models */ = {
+		86182C8C183AC46700245C21 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				86182C6D183ABEE100245C21 /* Subject.h */,
-				86182C6E183ABEE100245C21 /* Subject.m */,
-				86182C6A183ABEE100245C21 /* CourseTags.h */,
-				86182C6B183ABEE100245C21 /* CourseTags.m */,
-				86182C67183ABEE100245C21 /* Course.h */,
-				86182C68183ABEE100245C21 /* Course.m */,
+				86182C89183AC45B00245C21 /* LoadedData.h */,
+				86182C8A183AC45B00245C21 /* LoadedData.m */,
+				86182C86183AC45B00245C21 /* Course.h */,
+				86182C87183AC45B00245C21 /* Course.m */,
+				86182C83183AC45A00245C21 /* Subject.h */,
+				86182C84183AC45A00245C21 /* Subject.m */,
+				86182C80183AC45A00245C21 /* CourseTags.h */,
+				86182C81183AC45A00245C21 /* CourseTags.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -295,13 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */,
 				3ADE0C9A182D8E01006C5424 /* ECAppDelegate.m in Sources */,
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
+				86182C8B183AC45B00245C21 /* LoadedData.m in Sources */,
+				86182C88183AC45B00245C21 /* Course.m in Sources */,
+				86182C85183AC45A00245C21 /* Subject.m in Sources */,
+				86182C82183AC45A00245C21 /* CourseTags.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
-				86182C6F183ABEE100245C21 /* Subject.m in Sources */,
-				86182C6C183ABEE100245C21 /* CourseTags.m in Sources */,
-				86182C69183ABEE100245C21 /* Course.m in Sources */,
 				3ADE0CA9182D8E01006C5424 /* ECDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

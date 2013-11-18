@@ -8,6 +8,7 @@
 
 #import "Course.h"
 #import "Course.h"
+#import "CourseTags.h"
 
 
 @implementation Course

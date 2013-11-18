@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Course;
+@class Course, CourseTags;
 
 @interface Course : NSManagedObject
 
@@ -24,8 +24,8 @@
 
 @interface Course (CoreDataGeneratedAccessors)
 
-- (void)addTagsObject:(NSManagedObject *)value;
-- (void)removeTagsObject:(NSManagedObject *)value;
+- (void)addTagsObject:(CourseTags *)value;
+- (void)removeTagsObject:(CourseTags *)value;
 - (void)addTags:(NSSet *)values;
 - (void)removeTags:(NSSet *)values;
 
