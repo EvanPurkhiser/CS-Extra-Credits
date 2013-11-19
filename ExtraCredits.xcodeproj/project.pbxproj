@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC004183B21F700A3770B /* ECMasterViewCell.m */; };
 		3ADE0C88182D8E01006C5424 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C87182D8E01006C5424 /* Foundation.framework */; };
 		3ADE0C8A182D8E01006C5424 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C89182D8E01006C5424 /* CoreGraphics.framework */; };
 		3ADE0C8C182D8E01006C5424 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C8B182D8E01006C5424 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECMasterViewCell.h; path = ../ECMasterViewCell.h; sourceTree = "<group>"; };
+		3A8FC004183B21F700A3770B /* ECMasterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECMasterViewCell.m; path = ../ECMasterViewCell.m; sourceTree = "<group>"; };
 		3ADE0C84182D8E01006C5424 /* ExtraCredits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtraCredits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADE0C87182D8E01006C5424 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3ADE0C89182D8E01006C5424 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,20 +145,22 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
-				86182C8C183AC46700245C21 /* Models */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
-				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
-				3ADE0C9E182D8E01006C5424 /* Main_iPad.storyboard */,
-				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
-				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
-				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
-				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
-				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
-				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
-				3ADE0C90182D8E01006C5424 /* Supporting Files */,
 				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
 				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
+				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
+				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
+				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
+				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
+				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
+				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
+				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
+				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
+				3ADE0C9E182D8E01006C5424 /* Main_iPad.storyboard */,
+				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
+				86182C8C183AC46700245C21 /* Models */,
+				3ADE0C90182D8E01006C5424 /* Supporting Files */,
 			);
 			path = ExtraCredits;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				86182C82183AC45A00245C21 /* CourseTags.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
 				3ADE0CA9182D8E01006C5424 /* ECDetailViewController.m in Sources */,
+				3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

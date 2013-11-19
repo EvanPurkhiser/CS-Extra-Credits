@@ -10,6 +10,7 @@
 
 #import "ECDetailViewController.h"
 #import "ECCourseLoader.h"
+#import "ECMasterViewCell.h"
 #import "LoadedData.h"
 
 @interface ECMasterViewController ()
@@ -105,11 +106,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Find the cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ECMasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Set text label for cell
-    cell.textLabel.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
-    
+    //cell.textLabel.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
+    cell.courseName.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
+    cell.courseID.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseNumber"];
+
     return cell;
 }
 
