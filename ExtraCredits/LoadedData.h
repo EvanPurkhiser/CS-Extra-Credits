@@ -2,7 +2,7 @@
 //  LoadedData.h
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/18/13.
+//  Created by Purkhiser,Evan on 11/19/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
@@ -13,6 +13,5 @@
 @interface LoadedData : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * version;
-@property (nonatomic, retain) NSDate * updatedOn;
 
 @end

@@ -2,23 +2,23 @@
 //  Course.m
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/18/13.
+//  Created by Purkhiser,Evan on 11/19/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
 #import "Course.h"
 #import "Course.h"
-#import "CourseTags.h"
+#import "CourseTag.h"
 
 
 @implementation Course
 
-@dynamic subject;
-@dynamic number;
-@dynamic name;
 @dynamic details;
-@dynamic tags;
-@dynamic prerequisits;
+@dynamic name;
+@dynamic number;
+@dynamic subject;
 @dynamic alternatives;
+@dynamic prerequisits;
+@dynamic tags;
 
 @end
