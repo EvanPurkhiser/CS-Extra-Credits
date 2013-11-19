@@ -95,8 +95,10 @@
         courseModel.details = course[@"details"];
     }
 
-    // Save the version
-    [[self managedObjectContext] save:nil];
+    dispatch_async(dispatch_get_main_queue(),
+    ^{
+        [[self managedObjectContext] save:nil];
+    });
 }
 
 @end
