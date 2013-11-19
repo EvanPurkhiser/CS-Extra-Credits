@@ -110,8 +110,13 @@
     
     // Set text for cell labels
     cell.courseName.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
-    cell.courseID.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseNumber"];
-
+    NSString *courseSubject = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseSubject"];
+    NSString *courseNumber = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseNumber"];
+    
+    NSString *fullCourseID = [courseSubject stringByAppendingString:@":"];
+    fullCourseID = [fullCourseID stringByAppendingString:courseNumber];
+    cell.courseID.text = fullCourseID;
+    
     return cell;
 }
 
