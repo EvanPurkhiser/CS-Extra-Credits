@@ -158,9 +158,9 @@
 			children = (
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
-				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
 				07644DB5183C1AD900AE4875 /* XYPieChart.h */,
 				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
+				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
 				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
 				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
 				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
