@@ -12,14 +12,13 @@
 #import "ECCourseLoader.h"
 #import "ECMasterViewCell.h"
 #import "LoadedData.h"
+#import "Course.h"
 
 @interface ECMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation ECMasterViewController
-
-@synthesize courses = courses_;
 
 - (void)awakeFromNib
 {
@@ -40,25 +39,7 @@
     //self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (ECDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    // Get paths from the root directory
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    // Get documents path
-    NSString* documentsPath = [paths objectAtIndex:0];
-    
-    // Save plist file (CourseSeed.plist) path to variable
-    self->documentPlistPath = [documentsPath stringByAppendingString:@"CourseSeed"];
-    
-    // If the plist is not in the saved directory, then use the main bundle plist (also CourseSeed.plist)
-    if (![[NSFileManager defaultManager] fileExistsAtPath:self->documentPlistPath]) {
-        self->documentPlistPath = [[NSBundle mainBundle] pathForResource:@"CourseSeed" ofType:@"plist"];
-    }
-    
-    // Initialize contents of courses_ array with contents of plist
-    courses_ = [[NSMutableDictionary alloc] initWithContentsOfFile:self->documentPlistPath];
-
-
-    // DO MAGIC TO LOAD IN COURSES INTO THE TABLES
+    // Update course data from remote sources and for the first time
     [LoadedData updateCourseData:self.managedObjectContext];
 }
 
@@ -99,23 +80,15 @@
 // Return the number of total courses
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.courses objectForKey:@"courses"] count];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 // Load the courses into the table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Find the cell
     ECMasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    // Set text for cell labels
-    cell.courseName.text = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"name"];
-    NSString *courseSubject = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"subject"];
-    NSString *courseNumber = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"number"];
-    
-    NSString *fullCourseID = [courseSubject stringByAppendingString:@":"];
-    fullCourseID = [fullCourseID stringByAppendingString:courseNumber];
-    cell.courseID.text = fullCourseID;
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
@@ -158,13 +131,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /*
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
-    */
 }
 
 #pragma mark - Fetched results controller
@@ -177,14 +148,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -266,10 +237,13 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(ECMasterViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    // Set text for cell labels
+    cell.courseName.text = course.name;
+    cell.courseID.text = [NSString stringWithFormat:@"%@:%@", course.subject, course.number];
 }
 
 @end
