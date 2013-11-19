@@ -99,7 +99,7 @@
 // Return the number of total courses
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.courses objectForKey:@"courseList"] count];
+    return [[self.courses objectForKey:@"courses"] count];
 }
 
 // Load the courses into the table
@@ -109,9 +109,9 @@
     ECMasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Set text for cell labels
-    cell.courseName.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
-    NSString *courseSubject = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseSubject"];
-    NSString *courseNumber = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseNumber"];
+    cell.courseName.text = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSString *courseSubject = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"subject"];
+    NSString *courseNumber = [[[self.courses objectForKey:@"courses"] objectAtIndex:indexPath.row] objectForKey:@"number"];
     
     NSString *fullCourseID = [courseSubject stringByAppendingString:@":"];
     fullCourseID = [fullCourseID stringByAppendingString:courseNumber];
