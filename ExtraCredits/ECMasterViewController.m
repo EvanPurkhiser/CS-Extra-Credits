@@ -106,11 +106,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Find the cell
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     ECMasterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Set text label for cell
-    //cell.textLabel.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
+    // Set text for cell labels
     cell.courseName.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseName"];
     cell.courseID.text = [[[self.courses objectForKey:@"courseList"] objectAtIndex:indexPath.row] objectForKey:@"courseNumber"];
 
