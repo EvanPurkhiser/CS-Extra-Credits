@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DB6183C1B7E00AE4875 /* XYPieChart.m */; };
+		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
+		07644DC5183C1D1500AE4875 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC1183C1D1500AE4875 /* README.textile */; };
+		07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC2183C1D1500AE4875 /* LICENSE.txt */; };
+		07644DC7183C1D1500AE4875 /* gitignore.html in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC3183C1D1500AE4875 /* gitignore.html */; };
 		3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC004183B21F700A3770B /* ECMasterViewCell.m */; };
 		3ADE0C88182D8E01006C5424 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C87182D8E01006C5424 /* Foundation.framework */; };
 		3ADE0C8A182D8E01006C5424 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C89182D8E01006C5424 /* CoreGraphics.framework */; };
@@ -49,6 +53,10 @@
 /* Begin PBXFileReference section */
 		07644DB5183C1AD900AE4875 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		07644DB6183C1B7E00AE4875 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		07644DC0183C1D1500AE4875 /* XYPieChart.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYPieChart.podspec; sourceTree = "<group>"; };
+		07644DC1183C1D1500AE4875 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		07644DC2183C1D1500AE4875 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		07644DC3183C1D1500AE4875 /* gitignore.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gitignore.html; sourceTree = "<group>"; };
 		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECMasterViewCell.h; path = ../ECMasterViewCell.h; sourceTree = "<group>"; };
 		3A8FC004183B21F700A3770B /* ECMasterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECMasterViewCell.m; path = ../ECMasterViewCell.m; sourceTree = "<group>"; };
 		3ADE0C84182D8E01006C5424 /* ExtraCredits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtraCredits.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +181,10 @@
 		3ADE0C90182D8E01006C5424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
+				07644DC1183C1D1500AE4875 /* README.textile */,
+				07644DC2183C1D1500AE4875 /* LICENSE.txt */,
+				07644DC3183C1D1500AE4875 /* gitignore.html */,
 				86BD6BBE1836CD97007856EB /* CourseSeed.plist */,
 				3ADE0C91182D8E01006C5424 /* ExtraCredits-Info.plist */,
 				3ADE0C92182D8E01006C5424 /* InfoPlist.strings */,
@@ -296,7 +308,11 @@
 				3ADE0CA0182D8E01006C5424 /* Main_iPad.storyboard in Resources */,
 				3ADE0CAB182D8E01006C5424 /* Images.xcassets in Resources */,
 				3ADE0C9D182D8E01006C5424 /* Main_iPhone.storyboard in Resources */,
+				07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */,
 				3ADE0C94182D8E01006C5424 /* InfoPlist.strings in Resources */,
+				07644DC5183C1D1500AE4875 /* README.textile in Resources */,
+				07644DC7183C1D1500AE4875 /* gitignore.html in Resources */,
+				07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
