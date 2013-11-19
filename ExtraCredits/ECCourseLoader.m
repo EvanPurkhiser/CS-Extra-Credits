@@ -7,6 +7,7 @@
 //
 
 #import "ECCourseLoader.h"
+#import "Course.h"
 
 // This is the URL that will be checked to update the course list
 #define IMPORT_URL @"https://gist.github.com/EvanPurkhiser/7535783/raw/courseSeed.plist"
@@ -57,7 +58,7 @@
         NSDictionary *data = [[NSDictionary alloc] initWithContentsOfURL:[NSURL URLWithString:IMPORT_URL]];
 
         // Only update if the downloaded version is newer
-        if ([[data valueForKey:@"version"] integerValue] > [loadedDataModel.version integerValue])
+        if ([data[@"version"] integerValue] > [loadedDataModel.version integerValue])
         {
             // Create new model for the version and update for the data
             [[[self alloc] initWithEntity:request.entity insertIntoManagedObjectContext:context] initializeNewCourseData:data];
@@ -67,7 +68,35 @@
 
 - (void)initializeNewCourseData:(NSDictionary *)data
 {
-    NSLog(@"DOING UPDATE NOW!");
+    // Set the version for this new version
+    self.version = data[@"version"];
+
+    // Get our managed object context and a entity for the Course model
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSEntityDescription *courseEntity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
+
+    // Iterate over all passed courses and check if they exist already
+    for (NSDictionary *course in data[@"courses"])
+    {
+        // Find the course if it exists
+        NSFetchRequest *courseRequest = [NSFetchRequest new];
+        courseRequest.entity = courseEntity;
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"subject == %@ AND number == %@", course[@"subject"], course[@"number"]];
+
+        NSArray *results = [context executeFetchRequest:courseRequest error:nil];
+
+        // Get the first or new course
+        Course *courseModel = [results count] > 0 ? results[0] : [[Course alloc] initWithEntity:courseEntity insertIntoManagedObjectContext:context];
+
+        // Update the course information
+        courseModel.name    = course[@"name"];
+        courseModel.subject = course[@"subject"];
+        courseModel.number  = course[@"number"];
+        courseModel.details = course[@"details"];
+    }
+
+    // Save the version
+    [[self managedObjectContext] save:nil];
 }
 
 @end
