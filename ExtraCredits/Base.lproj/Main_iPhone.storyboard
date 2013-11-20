@@ -114,7 +114,7 @@
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="ECDetailViewController" sceneMemberID="viewController">
+                <viewController title="Detail" hidesBottomBarWhenPushed="YES" id="Ah7-4n-0Wa" customClass="ECDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UzX-R9-TL8"/>
                         <viewControllerLayoutGuide type="bottom" id="qEo-wr-j0M"/>
@@ -138,7 +138,8 @@
                             <constraint firstAttribute="trailing" secondItem="Lei-5M-9Gs" secondAttribute="trailing" constant="20" symbolic="YES" id="pXB-RP-Zz6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Course Detail" id="cra-N8-TIN"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
                     </connections>
