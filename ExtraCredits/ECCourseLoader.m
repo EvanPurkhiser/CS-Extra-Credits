@@ -60,8 +60,11 @@
         // Only update if the downloaded version is newer
         if ([data[@"version"] integerValue] > [loadedDataModel.version integerValue])
         {
-            // Create new model for the version and update for the data
-            [[[self alloc] initWithEntity:request.entity insertIntoManagedObjectContext:context] initializeNewCourseData:data];
+            dispatch_async(dispatch_get_main_queue(),
+            ^{
+                // Create new model for the version and update for the data
+                [[[self alloc] initWithEntity:request.entity insertIntoManagedObjectContext:context] initializeNewCourseData:data];
+            });
         }
     });
 }
@@ -74,6 +77,8 @@
     // Get our managed object context and a entity for the Course model
     NSManagedObjectContext *context = [self managedObjectContext];
     NSEntityDescription *courseEntity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
+
+    [[self managedObjectContext] save:nil];
 
     // Iterate over all passed courses and check if they exist already
     for (NSDictionary *course in data[@"courses"])
@@ -93,12 +98,9 @@
         courseModel.subject = course[@"subject"];
         courseModel.number  = course[@"number"];
         courseModel.details = course[@"details"];
-    }
 
-    dispatch_async(dispatch_get_main_queue(),
-    ^{
         [[self managedObjectContext] save:nil];
-    });
+    }
 }
 
 @end
