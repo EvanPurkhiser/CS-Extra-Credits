@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="-440" y="-203"/>
         </scene>
-        <!--Chart View Controller - Item 2-->
+        <!--Chart View Controller - Progress-->
         <scene sceneID="i4O-BU-jiX">
             <objects>
                 <viewController id="Bqm-ZZ-OUw" customClass="ECChartViewController" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Ekd-s1-hhq"/>
+                    <tabBarItem key="tabBarItem" title="Progress" id="Ekd-s1-hhq"/>
                     <connections>
                         <outlet property="pieChart" destination="YLd-rh-cGD" id="lyM-1a-FcV"/>
                     </connections>
