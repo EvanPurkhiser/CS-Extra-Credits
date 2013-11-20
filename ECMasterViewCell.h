@@ -12,6 +12,5 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *courseName;
 @property (nonatomic, weak) IBOutlet UILabel *courseID;
-@property (nonatomic, weak) IBOutlet UISwitch *courseSelected;
 
 @end
