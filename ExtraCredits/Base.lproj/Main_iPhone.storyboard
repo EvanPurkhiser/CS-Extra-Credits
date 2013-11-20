@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Courses-->
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="-440" y="-203"/>
         </scene>
-        <!--View Controller - Item 2-->
+        <!--Chart View Controller - Item 2-->
         <scene sceneID="i4O-BU-jiX">
             <objects>
-                <viewController id="Bqm-ZZ-OUw" sceneMemberID="viewController">
+                <viewController id="Bqm-ZZ-OUw" customClass="ECChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aep-0v-tJp"/>
                         <viewControllerLayoutGuide type="bottom" id="Bpf-Zd-qOW"/>
@@ -50,9 +50,19 @@
                     <view key="view" contentMode="scaleToFill" id="UQs-04-aac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-rh-cGD" customClass="XYPieChart">
+                                <rect key="frame" x="20" y="20" width="280" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="Ekd-s1-hhq"/>
+                    <connections>
+                        <outlet property="pieChart" destination="YLd-rh-cGD" id="lyM-1a-FcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-nE-bki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
