@@ -1,16 +1,16 @@
 //
-//  LoadedData.m
+//  CourseTag.m
 //  ExtraCredits
 //
 //  Created by Purkhiser,Evan on 11/19/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
-#import "LoadedData.h"
+#import "CourseTag.h"
 
 
-@implementation LoadedData
+@implementation CourseTag
 
-@dynamic version;
+@dynamic tag;
 
 @end
