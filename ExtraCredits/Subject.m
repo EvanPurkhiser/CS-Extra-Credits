@@ -12,5 +12,6 @@
 @implementation Subject
 
 @dynamic name;
+@dynamic number;
 
 @end

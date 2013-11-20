@@ -9,6 +9,7 @@
 #import "Course.h"
 #import "Course.h"
 #import "CourseTag.h"
+#import "Subject.h"
 
 
 @implementation Course
@@ -16,9 +17,9 @@
 @dynamic details;
 @dynamic name;
 @dynamic number;
-@dynamic subject;
 @dynamic alternatives;
 @dynamic prerequisits;
 @dynamic tags;
+@dynamic subject;
 
 @end

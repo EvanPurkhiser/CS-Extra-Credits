@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Course, CourseTag;
+@class Course, CourseTag, Subject;
 
 @interface Course : NSManagedObject
 
 @property (nonatomic, retain) NSString * details;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * number;
-@property (nonatomic, retain) NSString * subject;
 @property (nonatomic, retain) NSSet *alternatives;
 @property (nonatomic, retain) NSSet *prerequisits;
 @property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) Subject *subject;
 @end
 
 @interface Course (CoreDataGeneratedAccessors)

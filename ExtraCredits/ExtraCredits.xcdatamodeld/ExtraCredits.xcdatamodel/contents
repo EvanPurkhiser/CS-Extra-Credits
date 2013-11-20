@@ -4,12 +4,12 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="alternatives" inverseEntity="Course" syncable="YES"/>
         <relationship name="prerequisits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisits" inverseEntity="Course" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTag" syncable="YES"/>
     </entity>
-    <entity name="CourseTag" representedClassName="CourseTags" syncable="YES">
+    <entity name="CourseTag" representedClassName="CourseTag" syncable="YES">
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="LoadedData" representedClassName="LoadedData" syncable="YES">
@@ -17,6 +17,7 @@
     </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>

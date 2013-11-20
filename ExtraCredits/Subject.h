@@ -13,5 +13,6 @@
 @interface Subject : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * number;
 
 @end
