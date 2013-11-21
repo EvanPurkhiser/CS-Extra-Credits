@@ -2,7 +2,7 @@
 //  Course.m
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/19/13.
+//  Created by Purkhiser,Evan on 11/21/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 @dynamic number;
 @dynamic alternatives;
 @dynamic prerequisits;
-@dynamic tags;
 @dynamic subject;
+@dynamic tags;
 
 @end

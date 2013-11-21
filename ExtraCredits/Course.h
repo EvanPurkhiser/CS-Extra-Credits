@@ -2,7 +2,7 @@
 //  Course.h
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/19/13.
+//  Created by Purkhiser,Evan on 11/21/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
@@ -18,8 +18,8 @@
 @property (nonatomic, retain) NSString * number;
 @property (nonatomic, retain) NSSet *alternatives;
 @property (nonatomic, retain) NSSet *prerequisits;
-@property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) Subject *subject;
+@property (nonatomic, retain) NSSet *tags;
 @end
 
 @interface Course (CoreDataGeneratedAccessors)
