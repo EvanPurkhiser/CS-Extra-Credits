@@ -38,15 +38,18 @@
     // Set pie chart properties
     [self.pieChart setDelegate:self];
     [self.pieChart setDataSource:self];
-    [self.pieChart setStartPieAngle:M_PI_2];	//optional
-    [self.pieChart setAnimationSpeed:1.0];	//optional
-    [self.pieChart setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];	//optional
+    [self.pieChart setStartPieAngle:M_PI_2]; //optional
+    [self.pieChart setAnimationSpeed:1.0]; //optional
+    [self.pieChart setLabelFont:[UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 20)]]; // optional
     [self.pieChart setLabelColor:[UIColor blackColor]];	//optional, defaults to white
-    [self.pieChart setLabelShadowColor:[UIColor blackColor]];	//optional, defaults to none (nil)
+    [self.pieChart setLabelShadowColor:nil]; //optional, defaults to none (nil)
     [self.pieChart setLabelRadius:160];	//optional
-    [self.pieChart setShowPercentage:YES];	//optional
-    [self.pieChart setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];	//optional
-    [self.pieChart setPieCenter:CGPointMake(240, 240)];	//optional
+    [self.pieChart setShowPercentage:YES]; //optional
+    [self.pieChart setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]]; //optional
+    [self.pieChart setPieCenter:CGPointMake(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2)]; //optional
+    [self.pieChart setPieRadius:MIN(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2) - 10]; // optional
+    [self.pieChart setLabelRadius:self.pieChart.pieRadius/1.75]; // optional
+    [self.pieChart setLabelFont:[UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 20)]]; // optional
     
     // Configure colors for first 5 slices
     self.sliceColors =[NSArray arrayWithObjects:
@@ -85,13 +88,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // Configure pie chart size
-    self.pieChart.pieRadius = MIN(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2) - 10;
-    self.pieChart.self.pieCenter = CGPointMake(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2);
-    self.pieChart.labelRadius = self.pieChart.pieRadius/1.75;
-    self.pieChart.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 20)];
-    self.pieChart.labelShadowColor = nil;
     
     // Reload data
     [self.pieChart reloadData];
@@ -163,22 +159,19 @@
 
 - (void)pieChart:(XYPieChart *)pieChart willSelectSliceAtIndex:(NSUInteger)index
 {
-    NSLog(@"will select slice at index %d",index);
+    NSLog(@"will select slice at index %lu",(unsigned long)index);
 }
-
 - (void)pieChart:(XYPieChart *)pieChart willDeselectSliceAtIndex:(NSUInteger)index
 {
-    NSLog(@"will deselect slice at index %d",index);
+    NSLog(@"will deselect slice at index %lu",(unsigned long)index);
 }
-
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index
 {
-    NSLog(@"did deselect slice at index %d",index);
+    NSLog(@"did deselect slice at index %lu",(unsigned long)index);
 }
-
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
-    NSLog(@"did select slice at index %d",index);
+    NSLog(@"did select slice at index %lu",(unsigned long)index);
     self.selectedSliceLabel.text = [NSString stringWithFormat:@"$%@",[self.slices objectAtIndex:index]];
 }
 
