@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    self.slices = [NSMutableArray arrayWithCapacity:10];
+    
     [self.pieChart setDelegate:self];
     [self.pieChart setDataSource:self];
     [self.pieChart setStartPieAngle:M_PI_2];	//optional
@@ -43,6 +45,13 @@
     [self.pieChart setShowPercentage:YES];	//optional
     [self.pieChart setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];	//optional
     [self.pieChart setPieCenter:CGPointMake(240, 240)];	//optional
+    
+    self.sliceColors =[NSArray arrayWithObjects:
+                       [UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
+                       [UIColor colorWithRed:129/255.0 green:195/255.0 blue:29/255.0 alpha:1],
+                       [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
+                       [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
+                       [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
 }
 
 - (void)viewDidUnload
@@ -53,31 +62,44 @@
     [self setIndexOfSlices:nil];
     [self setNumOfSlices:nil];
     [self setDownArrow:nil];
+    
     [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    for (int i = 0; i < 5; i++)
+    {
+        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
+        [_slices addObject:one];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     self.pieChart.pieRadius = MIN(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2) - 10;
     self.pieChart.self.pieCenter = CGPointMake(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2);
     self.pieChart.labelRadius = self.pieChart.pieRadius/2;
     self.pieChart.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 5)];
+    
     [self.pieChart reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [_slices removeAllObjects];
+    
 	[super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [self.pieChart reloadData];
+    
 	[super viewDidDisappear:animated];
 }
 
@@ -108,22 +130,23 @@
 }
 
 - (IBAction)showSlicePercentage:(id)sender {
-    
+    UISwitch *perSwitch = (UISwitch *)sender;
+    [self.pieChart setShowPercentage:perSwitch.isOn];
 }
 
 #pragma mark - XYPieChart Data Source
 
 - (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart {
-    return 2;
+    return self.slices.count;
 }
 
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index {
-    return 5;
+    return [[self.slices objectAtIndex:index] intValue];
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index
 {
-    return nil;
+    return [self.sliceColors objectAtIndex:(index % self.sliceColors.count)];
 }
 
 #pragma mark - XYPieChart Delegate
@@ -132,14 +155,17 @@
 {
     NSLog(@"will select slice at index %d",index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart willDeselectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"will deselect slice at index %d",index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"did deselect slice at index %d",index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"did select slice at index %d",index);
