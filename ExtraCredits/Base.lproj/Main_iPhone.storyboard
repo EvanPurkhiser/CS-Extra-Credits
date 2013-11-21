@@ -32,7 +32,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="rIw-n1-u2O"/>
-                        <segue destination="Bqm-ZZ-OUw" kind="relationship" relationship="viewControllers" id="kQX-RZ-ZgD"/>
+                        <segue destination="Rmr-Jh-5zB" kind="relationship" relationship="viewControllers" id="kQX-RZ-ZgD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CD9-uA-hDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,21 +52,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-rh-cGD" customClass="XYPieChart">
-                                <rect key="frame" x="20" y="20" width="280" height="284"/>
+                                <rect key="frame" x="20" y="113" width="280" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="Ekd-s1-hhq"/>
+                    <navigationItem key="navigationItem" title="Progress" id="F8w-Ow-6UZ"/>
                     <connections>
                         <outlet property="pieChart" destination="YLd-rh-cGD" id="lyM-1a-FcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-nE-bki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="82"/>
+            <point key="canvasLocation" x="625" y="82"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -157,6 +157,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="-588"/>
+        </scene>
+        <!--Navigation Controller - Progress-->
+        <scene sceneID="MTG-sS-KpZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rmr-Jh-5zB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" id="Ekd-s1-hhq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mrx-8r-Uvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bqm-ZZ-OUw" kind="relationship" relationship="rootViewController" id="Wx4-cK-Lxi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfo-mU-gL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="99" y="82"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
