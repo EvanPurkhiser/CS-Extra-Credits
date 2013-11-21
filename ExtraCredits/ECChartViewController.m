@@ -89,8 +89,9 @@
     // Configure pie chart size
     self.pieChart.pieRadius = MIN(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2) - 10;
     self.pieChart.self.pieCenter = CGPointMake(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2);
-    self.pieChart.labelRadius = self.pieChart.pieRadius/2;
-    self.pieChart.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 5)];
+    self.pieChart.labelRadius = self.pieChart.pieRadius/1.75;
+    self.pieChart.labelFont = [UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 20)];
+    self.pieChart.labelShadowColor = nil;
     
     // Reload data
     [self.pieChart reloadData];
