@@ -8,6 +8,8 @@
 
 #import "ECCourseLoader.h"
 #import "Course.h"
+#import "Subject.h"
+#import "CourseTag.h"
 
 // This is the URL that will be checked to update the course list
 #define IMPORT_URL @"https://gist.github.com/EvanPurkhiser/7535783/raw/courseSeed.plist"
@@ -73,14 +75,49 @@
 {
     // Set the version for this new version
     self.version = data[@"version"];
-
-    // Get our managed object context and a entity for the Course model
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSEntityDescription *courseEntity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
-
     [[self managedObjectContext] save:nil];
 
-    // Iterate over all passed courses and check if they exist already
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+    // Get descriptors for used entities
+    NSEntityDescription *courseEntity    = [NSEntityDescription entityForName:@"Course"    inManagedObjectContext:context];
+    NSEntityDescription *subjectEntity   = [NSEntityDescription entityForName:@"Subject"   inManagedObjectContext:context];
+    NSEntityDescription *courseTagEntity = [NSEntityDescription entityForName:@"CourseTag" inManagedObjectContext:context];
+
+    // Store subject and tag models in a dictionary
+    NSMutableDictionary *subjects = [data[@"subjectNames"] mutableCopy];
+
+    // Iterate over all passed subjects
+    for (id subjectNumber in data[@"subjectNames"])
+    {
+        // Check if subject is already exists
+        NSFetchRequest *subjectRequest = [NSFetchRequest new];
+        subjectRequest.entity = subjectEntity;
+        subjectRequest.predicate = [NSPredicate predicateWithFormat:@"number = %@", subjectNumber];
+
+        NSArray *results = [context executeFetchRequest:subjectRequest error:nil];
+
+        // Get the first or new subject
+        Subject *subject = [results count] > 0 ? results[0] : [[Subject alloc] initWithEntity:subjectEntity insertIntoManagedObjectContext:context];
+
+        subject.number = subjectNumber;
+        subject.name   = subjects[subjectNumber];
+
+        // Keep track of he Subject managed object for reference later
+        subjects[subjectNumber] = subject;
+    }
+
+    // Remove old subjects that no longer exists subjects
+    NSFetchRequest *oldSubjectsRequest = [NSFetchRequest new];
+    oldSubjectsRequest.entity = subjectEntity;
+    oldSubjectsRequest.predicate = [NSPredicate predicateWithFormat:@"NOT (number IN %@)", [subjects allKeys]];
+
+    for (NSManagedObject *oldSubjct in [context executeFetchRequest:oldSubjectsRequest error:nil])
+    {
+        [context deleteObject:oldSubjct];
+    }
+
+    // Iterate over all passed courses
     for (NSDictionary *course in data[@"courses"])
     {
         // Find the course if it exists
