@@ -115,7 +115,9 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Courses" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Courses" id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="o5q-LU-aKi"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
