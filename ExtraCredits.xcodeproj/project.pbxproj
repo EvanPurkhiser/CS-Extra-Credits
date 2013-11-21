@@ -60,8 +60,8 @@
 		07644DC3183C1D1500AE4875 /* gitignore.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gitignore.html; sourceTree = "<group>"; };
 		07644DC8183C230600AE4875 /* ECChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECChartViewController.h; sourceTree = "<group>"; };
 		07644DC9183C230600AE4875 /* ECChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECChartViewController.m; sourceTree = "<group>"; };
-		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECMasterViewCell.h; path = ../ECMasterViewCell.h; sourceTree = "<group>"; };
-		3A8FC004183B21F700A3770B /* ECMasterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECMasterViewCell.m; path = ../ECMasterViewCell.m; sourceTree = "<group>"; };
+		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMasterViewCell.h; sourceTree = "<group>"; };
+		3A8FC004183B21F700A3770B /* ECMasterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMasterViewCell.m; sourceTree = "<group>"; };
 		3ADE0C84182D8E01006C5424 /* ExtraCredits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtraCredits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADE0C87182D8E01006C5424 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3ADE0C89182D8E01006C5424 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
