@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="1146" y="-588"/>
         </scene>
-        <!--View Controller - Advising-->
+        <!--Advising View Controller - Advising-->
         <scene sceneID="ZFs-bI-Jec">
             <objects>
-                <viewController id="wEf-w6-VzK" sceneMemberID="viewController">
+                <viewController id="wEf-w6-VzK" customClass="ECAdvisingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdv-HU-Jbs"/>
                         <viewControllerLayoutGuide type="bottom" id="tbv-qu-fAE"/>
@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="105" y="759"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="VgB-zX-JFn">
             <objects>
-                <viewController id="iV6-8E-u7o" sceneMemberID="viewController">
+                <viewController id="iV6-8E-u7o" customClass="ECSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L9t-cG-mf0"/>
                         <viewControllerLayoutGuide type="bottom" id="ba9-9S-mFO"/>
