@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073D65E2183EC7D100258DF6 /* connectivity-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65DB183EC7D100258DF6 /* connectivity-bar.png */; };
+		073D65E3183EC7D100258DF6 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65DC183EC7D100258DF6 /* gear.png */; };
+		073D65E4183EC7D100258DF6 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65DD183EC7D100258DF6 /* pencil.png */; };
+		073D65E5183EC7D100258DF6 /* pie-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65DE183EC7D100258DF6 /* pie-chart.png */; };
+		073D65E7183EC7D100258DF6 /* uptrend.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65E0183EC7D100258DF6 /* uptrend.png */; };
+		073D65E8183EC7D100258DF6 /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = 073D65E1183EC7D100258DF6 /* woman.png */; };
 		07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DB6183C1B7E00AE4875 /* XYPieChart.m */; };
 		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
 		07644DC5183C1D1500AE4875 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC1183C1D1500AE4875 /* README.textile */; };
@@ -52,6 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073D65DB183EC7D100258DF6 /* connectivity-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectivity-bar.png"; sourceTree = "<group>"; };
+		073D65DC183EC7D100258DF6 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		073D65DD183EC7D100258DF6 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		073D65DE183EC7D100258DF6 /* pie-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pie-chart.png"; sourceTree = "<group>"; };
+		073D65E0183EC7D100258DF6 /* uptrend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uptrend.png; sourceTree = "<group>"; };
+		073D65E1183EC7D100258DF6 /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
 		07644DB5183C1AD900AE4875 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		07644DB6183C1B7E00AE4875 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		07644DC0183C1D1500AE4875 /* XYPieChart.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYPieChart.podspec; sourceTree = "<group>"; };
@@ -125,6 +137,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073D65DA183EC79F00258DF6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				073D65DB183EC7D100258DF6 /* connectivity-bar.png */,
+				073D65DC183EC7D100258DF6 /* gear.png */,
+				073D65DD183EC7D100258DF6 /* pencil.png */,
+				073D65DE183EC7D100258DF6 /* pie-chart.png */,
+				073D65E0183EC7D100258DF6 /* uptrend.png */,
+				073D65E1183EC7D100258DF6 /* woman.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		3ADE0C7B182D8E01006C5424 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +211,7 @@
 		3ADE0C90182D8E01006C5424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				073D65DA183EC79F00258DF6 /* Images */,
 				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
 				07644DC1183C1D1500AE4875 /* README.textile */,
 				07644DC2183C1D1500AE4875 /* LICENSE.txt */,
@@ -309,14 +335,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073D65E5183EC7D100258DF6 /* pie-chart.png in Resources */,
+				073D65E7183EC7D100258DF6 /* uptrend.png in Resources */,
+				073D65E4183EC7D100258DF6 /* pencil.png in Resources */,
 				86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */,
 				3ADE0CA0182D8E01006C5424 /* Main_iPad.storyboard in Resources */,
 				3ADE0CAB182D8E01006C5424 /* Images.xcassets in Resources */,
 				3ADE0C9D182D8E01006C5424 /* Main_iPhone.storyboard in Resources */,
+				073D65E3183EC7D100258DF6 /* gear.png in Resources */,
 				07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */,
 				3ADE0C94182D8E01006C5424 /* InfoPlist.strings in Resources */,
 				07644DC5183C1D1500AE4875 /* README.textile in Resources */,
 				07644DC7183C1D1500AE4875 /* gitignore.html in Resources */,
+				073D65E2183EC7D100258DF6 /* connectivity-bar.png in Resources */,
+				073D65E8183EC7D100258DF6 /* woman.png in Resources */,
 				07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
