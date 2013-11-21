@@ -117,13 +117,15 @@
         [context deleteObject:oldSubjct];
     }
 
+    [[self managedObjectContext] save:nil];
+
     // Iterate over all passed courses
     for (NSDictionary *course in data[@"courses"])
     {
         // Find the course if it exists
         NSFetchRequest *courseRequest = [NSFetchRequest new];
         courseRequest.entity = courseEntity;
-        courseRequest.predicate = [NSPredicate predicateWithFormat:@"subject == %@ AND number == %@", course[@"subject"], course[@"number"]];
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"subject.number == %@ AND number == %@", course[@"subject"], course[@"number"]];
 
         NSArray *results = [context executeFetchRequest:courseRequest error:nil];
 
@@ -132,9 +134,9 @@
 
         // Update the course information
         courseModel.name    = course[@"name"];
-        courseModel.subject = course[@"subject"];
         courseModel.number  = course[@"number"];
         courseModel.details = course[@"details"];
+        courseModel.subject = subjects[course[@"subject"]];
 
         [[self managedObjectContext] save:nil];
     }

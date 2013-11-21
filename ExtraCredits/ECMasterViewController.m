@@ -11,7 +11,9 @@
 #import "ECCourseLoader.h"
 #import "ECMasterViewCell.h"
 #import "LoadedData.h"
+
 #import "Course.h"
+#import "Subject.h"
 
 @interface ECMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -245,17 +247,22 @@
 {
     Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSString *cid = [NSString stringWithFormat:@"%@:%@", course.subject, course.number];
+    NSString *cid = [NSString stringWithFormat:@"%@:%@", course.subject.number, course.number];
     NSMutableAttributedString *courseID = [[NSMutableAttributedString alloc] initWithString:cid];
-    if ([course.subject isEqualToString:@"3460"]) {
+
+    if ([course.subject.number isEqualToString:@"3460"])
+    {
         [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0,5)];
     }
-    if ([course.subject isEqualToString:@"3450"]) {
+    if ([course.subject.number isEqualToString:@"3450"])
+    {
         [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
     }
-    if ([course.subject isEqualToString:@"3470"]) {
+    if ([course.subject.number isEqualToString:@"3470"])
+    {
         [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:70.0/255.0 green:150.0/255.0 blue:20.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
     }
+
     cell.courseName.text = course.name;
     cell.courseID.attributedText = courseID;
 }
