@@ -29,6 +29,11 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)configureView
+{
+    // Update the user interface for the settings item.
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
