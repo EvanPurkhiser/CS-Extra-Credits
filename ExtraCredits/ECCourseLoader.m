@@ -107,18 +107,6 @@
         subjects[subjectNumber] = subject;
     }
 
-    // Remove old subjects that no longer exists subjects
-    NSFetchRequest *oldSubjectsRequest = [NSFetchRequest new];
-    oldSubjectsRequest.entity = subjectEntity;
-    oldSubjectsRequest.predicate = [NSPredicate predicateWithFormat:@"NOT (number IN %@)", [subjects allKeys]];
-
-    for (NSManagedObject *oldSubjct in [context executeFetchRequest:oldSubjectsRequest error:nil])
-    {
-        [context deleteObject:oldSubjct];
-    }
-
-    [context save:nil];
-
     // Iterate over all passed courses
     for (NSDictionary *course in data[@"courses"])
     {
