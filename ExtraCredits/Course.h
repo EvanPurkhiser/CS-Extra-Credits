@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * number;
 @property (nonatomic, retain) NSSet *alternatives;
-@property (nonatomic, retain) NSSet *prerequisits;
+@property (nonatomic, retain) NSSet *prerequisites;
 @property (nonatomic, retain) Subject *subject;
 @property (nonatomic, retain) NSSet *tags;
 @end
@@ -29,10 +29,10 @@
 - (void)addAlternatives:(NSSet *)values;
 - (void)removeAlternatives:(NSSet *)values;
 
-- (void)addPrerequisitsObject:(Course *)value;
-- (void)removePrerequisitsObject:(Course *)value;
-- (void)addPrerequisits:(NSSet *)values;
-- (void)removePrerequisits:(NSSet *)values;
+- (void)addPrerequisitesObject:(Course *)value;
+- (void)removePrerequisitesObject:(Course *)value;
+- (void)addPrerequisites:(NSSet *)values;
+- (void)removePrerequisites:(NSSet *)values;
 
 - (void)addTagsObject:(CourseTag *)value;
 - (void)removeTagsObject:(CourseTag *)value;

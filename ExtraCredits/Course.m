@@ -18,7 +18,7 @@
 @dynamic name;
 @dynamic number;
 @dynamic alternatives;
-@dynamic prerequisits;
+@dynamic prerequisites;
 @dynamic subject;
 @dynamic tags;
 

@@ -5,7 +5,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="alternatives" inverseEntity="Course" syncable="YES"/>
-        <relationship name="prerequisits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisits" inverseEntity="Course" syncable="YES"/>
+        <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisites" inverseEntity="Course" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="courses" inverseEntity="Subject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTag" inverseName="courses" inverseEntity="CourseTag" syncable="YES"/>
     </entity>

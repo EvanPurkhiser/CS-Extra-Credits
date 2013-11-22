@@ -45,9 +45,9 @@
 		86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C72183ABF8B00245C21 /* ECCourseLoader.m */; };
 		866AF734183C3E1300132562 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF733183C3E1300132562 /* LoadedData.m */; };
 		866AF737183C3E1400132562 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF736183C3E1400132562 /* CourseTag.m */; };
-		866AF73A183C3E1400132562 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF739183C3E1400132562 /* Course.m */; };
 		866AF73D183C3E1400132562 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF73C183C3E1400132562 /* Subject.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
+		86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C85ABE183EE1EE007CBBC4 /* Course.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,11 +113,11 @@
 		866AF733183C3E1300132562 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
 		866AF735183C3E1400132562 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
 		866AF736183C3E1400132562 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
-		866AF738183C3E1400132562 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		866AF739183C3E1400132562 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		866AF73B183C3E1400132562 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
 		866AF73C183C3E1400132562 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
+		86C85ABD183EE1EE007CBBC4 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		86C85ABE183EE1EE007CBBC4 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,10 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
+				86C85ABD183EE1EE007CBBC4 /* Course.h */,
+				86C85ABE183EE1EE007CBBC4 /* Course.m */,
 				866AF73B183C3E1400132562 /* Subject.h */,
 				866AF73C183C3E1400132562 /* Subject.m */,
-				866AF738183C3E1400132562 /* Course.h */,
-				866AF739183C3E1400132562 /* Course.m */,
 				866AF735183C3E1400132562 /* CourseTag.h */,
 				866AF736183C3E1400132562 /* CourseTag.m */,
 				866AF732183C3E1300132562 /* LoadedData.h */,
@@ -386,8 +386,8 @@
 				07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */,
 				86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */,
 				3ADE0C9A182D8E01006C5424 /* ECAppDelegate.m in Sources */,
-				866AF73A183C3E1400132562 /* Course.m in Sources */,
 				866AF734183C3E1300132562 /* LoadedData.m in Sources */,
+				86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */,
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
