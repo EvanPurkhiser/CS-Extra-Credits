@@ -138,6 +138,21 @@
         courseModel.details = course[@"details"];
         courseModel.subject = subjects[course[@"subject"]];
 
+        // Add course tags
+        for (NSString *tag in course[@"tags"])
+        {
+            NSFetchRequest *courseRequest = [NSFetchRequest new];
+            courseRequest.entity = courseTagEntity;
+            courseRequest.predicate = [NSPredicate predicateWithFormat:@"tag == %@", tag];
+
+            // Get the tag or create a new tag if nessicary
+            NSArray   *results  = [context executeFetchRequest:courseRequest error:nil];
+            CourseTag *tagModel = [results count] > 0 ? results[0] : [[CourseTag alloc] initWithEntity:courseTagEntity insertIntoManagedObjectContext:context];
+
+            tagModel.tag = tag;
+            [courseModel addTagsObject:tagModel];
+        }
+
         [[self managedObjectContext] save:nil];
     }
 }
