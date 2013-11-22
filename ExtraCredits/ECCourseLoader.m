@@ -117,7 +117,7 @@
         [context deleteObject:oldSubjct];
     }
 
-    [[self managedObjectContext] save:nil];
+    [context save:nil];
 
     // Iterate over all passed courses
     for (NSDictionary *course in data[@"courses"])
@@ -153,7 +153,40 @@
             [courseModel addTagsObject:tagModel];
         }
 
-        [[self managedObjectContext] save:nil];
+        [context save:nil];
+    }
+
+    // Iterate through courses again and setup alternative and prerequisit sets
+    for (NSDictionary *course in data[@"courses"])
+    {
+        // Grab the entity
+        NSFetchRequest *courseRequest = [NSFetchRequest new];
+        courseRequest.entity = courseEntity;
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"subject.number == %@ AND number == %@", course[@"subject"], course[@"number"]];
+
+        Course *courseModel = [context executeFetchRequest:courseRequest error:nil][0];
+
+        NSMutableDictionary *relatedCourses = [@{@"alternatives": @0, @"prerequisites": @0} mutableCopy];
+
+        for (NSString *relationId in [relatedCourses allKeys])
+        {
+            NSMutableSet *courseSet = [NSMutableSet new];
+            relatedCourses[relationId] = courseSet;
+
+            for (NSDictionary *refCourse in course[relationId])
+            {
+                NSFetchRequest *courseRequest = [NSFetchRequest new];
+                courseRequest.entity = courseEntity;
+                courseRequest.predicate = [NSPredicate predicateWithFormat:@"subject.number == %@ AND number == %@", refCourse[@"subject"], refCourse[@"number"]];
+
+                [courseSet addObject:[context executeFetchRequest:courseRequest error:nil][0]];
+            }
+        }
+
+        [courseModel addAlternatives:relatedCourses[@"alternatives"]];
+        [courseModel addPrerequisites:relatedCourses[@"prerequisites"]];
+
+        [context save:nil];
     }
 }
 
