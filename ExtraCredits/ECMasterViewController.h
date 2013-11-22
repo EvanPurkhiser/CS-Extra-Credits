@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "ECFilterViewController.h"
 
 @class ECDetailViewController;
 
-#import <CoreData/CoreData.h>
-
-@interface ECMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface ECMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, ECFilterViewControllerDelegate>
 
 @property (strong, nonatomic) ECDetailViewController *detailViewController;
 

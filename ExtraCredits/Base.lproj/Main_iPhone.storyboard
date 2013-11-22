@@ -120,7 +120,7 @@
                     <navigationItem key="navigationItem" title="Courses" id="tQt-TN-PWz">
                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="o5q-LU-aKi">
                             <connections>
-                                <segue destination="76j-32-Eg0" kind="modal" id="gPM-oe-W1d"/>
+                                <segue destination="76j-32-Eg0" kind="modal" identifier="showFilter" id="gPM-oe-W1d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

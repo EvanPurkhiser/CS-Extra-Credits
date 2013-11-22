@@ -7,6 +7,7 @@
 //
 
 #import "ECFilterViewController.h"
+#import "ECMasterViewController.h"
 
 @interface ECFilterViewController ()
 
@@ -71,9 +72,16 @@
     [self.delegate filterViewControllerDidCancel:self];
 }
 
+// Will need to do more than close the view
 - (IBAction)done:(id)sender
 {
     [self.delegate filterViewControllerDidSave:self];
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
 }
 
 /*

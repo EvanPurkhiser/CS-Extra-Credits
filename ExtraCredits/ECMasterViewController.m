@@ -7,7 +7,6 @@
 //
 
 #import "ECMasterViewController.h"
-
 #import "ECDetailViewController.h"
 #import "ECCourseLoader.h"
 #import "ECMasterViewCell.h"
@@ -136,6 +135,11 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
+    if ([[segue identifier] isEqualToString:@"showFilter"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ECFilterViewController *filterViewController = [navigationController viewControllers][0];
+        filterViewController.delegate = self;
+    }
 }
 
 #pragma mark - Fetched results controller
@@ -254,6 +258,17 @@
     }
     cell.courseName.text = course.name;
     cell.courseID.attributedText = courseID;
+}
+
+#pragma mark - PlayerDetailsViewControllerDelegate
+- (void)filterViewControllerDidCancel:(ECFilterViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)filterViewControllerDidSave:(ECFilterViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
