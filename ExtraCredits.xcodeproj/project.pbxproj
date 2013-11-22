@@ -213,7 +213,6 @@
 				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
 				073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */,
 				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
-				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
 				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
 				3ADE0C9E182D8E01006C5424 /* Main_iPad.storyboard */,
 				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
@@ -261,6 +260,7 @@
 		86182C8C183AC46700245C21 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
 				866AF73B183C3E1400132562 /* Subject.h */,
 				866AF73C183C3E1400132562 /* Subject.m */,
 				866AF738183C3E1400132562 /* Course.h */,
