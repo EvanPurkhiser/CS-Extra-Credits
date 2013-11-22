@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Courses-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
                 <navigationController id="rS3-R9-Ivy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Courses" id="WWo-sR-fHa"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="pencil.png" id="WWo-sR-fHa"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -118,7 +118,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Courses" id="tQt-TN-PWz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="o5q-LU-aKi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="o5q-LU-aKi">
                             <connections>
                                 <segue destination="76j-32-Eg0" kind="modal" identifier="showFilter" id="gPM-oe-W1d"/>
                             </connections>
@@ -206,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="1146" y="-588"/>
         </scene>
-        <!--View Controller - Advising-->
+        <!--Advising View Controller - Advising-->
         <scene sceneID="ZFs-bI-Jec">
             <objects>
-                <viewController id="wEf-w6-VzK" sceneMemberID="viewController">
+                <viewController id="wEf-w6-VzK" customClass="ECAdvisingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdv-HU-Jbs"/>
                         <viewControllerLayoutGuide type="bottom" id="tbv-qu-fAE"/>
@@ -229,7 +229,7 @@
         <scene sceneID="MTG-sS-KpZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rmr-Jh-5zB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Progress" id="Ekd-s1-hhq"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="pie-chart.png" id="Ekd-s1-hhq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mrx-8r-Uvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -266,7 +266,7 @@
         <scene sceneID="HOB-sU-wE6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nlh-Sh-4un" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Advising" id="tXI-8u-JtD"/>
+                    <tabBarItem key="tabBarItem" title="Advising" image="woman.png" id="tXI-8u-JtD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AaW-V0-aWF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -281,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="105" y="759"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="VgB-zX-JFn">
             <objects>
-                <viewController id="iV6-8E-u7o" sceneMemberID="viewController">
+                <viewController id="iV6-8E-u7o" customClass="ECSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L9t-cG-mf0"/>
                         <viewControllerLayoutGuide type="bottom" id="ba9-9S-mFO"/>
@@ -304,7 +304,7 @@
         <scene sceneID="H5K-xU-VyV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="euC-69-vvJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="80m-NT-8OZ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear.png" id="80m-NT-8OZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NMV-o2-Yop">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -320,6 +320,12 @@
             <point key="canvasLocation" x="99" y="1426"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear.png" width="30" height="30"/>
+        <image name="pencil.png" width="30" height="30"/>
+        <image name="pie-chart.png" width="30" height="30"/>
+        <image name="woman.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
