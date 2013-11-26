@@ -7,6 +7,8 @@
 //
 
 #import "ECDetailViewController.h"
+#import "Course.h"
+#import "Subject.h"
 
 @interface ECDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -37,8 +39,11 @@
 
     if (self.detailItem) {
         
-        // Set nav. bar title (none)
-        self.navigationItem.title = @"";
+        // Set nav. bar title (course subject:course number)
+        Course *course = self.detailItem;
+        self.navigationItem.title = [NSString stringWithFormat:@"%@:%@",
+                                     course.subject.number,
+                                     course.number];
         
         // Set course name label
         self.courseNameLabel.text = [[self.detailItem valueForKey:@"name"] description];
