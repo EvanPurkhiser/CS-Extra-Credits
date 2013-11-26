@@ -37,12 +37,11 @@
 		3ADE0CBD182D8E01006C5424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */; };
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
 		86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C72183ABF8B00245C21 /* ECCourseLoader.m */; };
-		866F72F5184539EB00A67767 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F72F4184539EB00A67767 /* Course.m */; };
-		866F72F8184539EC00A67767 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F72F7184539EC00A67767 /* LoadedData.m */; };
-		866F72FB184539EC00A67767 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F72FA184539EC00A67767 /* CourseTag.m */; };
-		866F72FE184539EC00A67767 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F72FD184539EC00A67767 /* Subject.m */; };
-		866F7301184539EC00A67767 /* CourseTracked.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F7300184539EC00A67767 /* CourseTracked.m */; };
+		866AF734183C3E1300132562 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF733183C3E1300132562 /* LoadedData.m */; };
+		866AF737183C3E1400132562 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF736183C3E1400132562 /* CourseTag.m */; };
+		866AF73D183C3E1400132562 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF73C183C3E1400132562 /* Subject.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
+		86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C85ABE183EE1EE007CBBC4 /* Course.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,17 +97,15 @@
 		3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtraCreditsTests.m; sourceTree = "<group>"; };
 		86182C71183ABF8B00245C21 /* ECCourseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCourseLoader.h; sourceTree = "<group>"; };
 		86182C72183ABF8B00245C21 /* ECCourseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCourseLoader.m; sourceTree = "<group>"; };
-		866F72F3184539EB00A67767 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		866F72F4184539EB00A67767 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		866F72F6184539EC00A67767 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
-		866F72F7184539EC00A67767 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
-		866F72F9184539EC00A67767 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
-		866F72FA184539EC00A67767 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
-		866F72FC184539EC00A67767 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		866F72FD184539EC00A67767 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
-		866F72FF184539EC00A67767 /* CourseTracked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTracked.h; sourceTree = "<group>"; };
-		866F7300184539EC00A67767 /* CourseTracked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTracked.m; sourceTree = "<group>"; };
+		866AF732183C3E1300132562 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
+		866AF733183C3E1300132562 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
+		866AF735183C3E1400132562 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
+		866AF736183C3E1400132562 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
+		866AF73B183C3E1400132562 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		866AF73C183C3E1400132562 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
+		86C85ABD183EE1EE007CBBC4 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		86C85ABE183EE1EE007CBBC4 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,17 +234,15 @@
 		86182C8C183AC46700245C21 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				866F72F3184539EB00A67767 /* Course.h */,
-				866F72F4184539EB00A67767 /* Course.m */,
-				866F72FF184539EC00A67767 /* CourseTracked.h */,
-				866F7300184539EC00A67767 /* CourseTracked.m */,
-				866F72FC184539EC00A67767 /* Subject.h */,
-				866F72FD184539EC00A67767 /* Subject.m */,
-				866F72F9184539EC00A67767 /* CourseTag.h */,
-				866F72FA184539EC00A67767 /* CourseTag.m */,
-				866F72F6184539EC00A67767 /* LoadedData.h */,
-				866F72F7184539EC00A67767 /* LoadedData.m */,
 				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
+				86C85ABD183EE1EE007CBBC4 /* Course.h */,
+				86C85ABE183EE1EE007CBBC4 /* Course.m */,
+				866AF73B183C3E1400132562 /* Subject.h */,
+				866AF73C183C3E1400132562 /* Subject.m */,
+				866AF735183C3E1400132562 /* CourseTag.h */,
+				866AF736183C3E1400132562 /* CourseTag.m */,
+				866AF732183C3E1300132562 /* LoadedData.h */,
+				866AF733183C3E1300132562 /* LoadedData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -362,20 +357,19 @@
 				07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */,
 				86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */,
 				3ADE0C9A182D8E01006C5424 /* ECAppDelegate.m in Sources */,
-				866F72FB184539EC00A67767 /* CourseTag.m in Sources */,
-				866F72FE184539EC00A67767 /* Subject.m in Sources */,
-				866F72F5184539EB00A67767 /* Course.m in Sources */,
+				866AF734183C3E1300132562 /* LoadedData.m in Sources */,
+				86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */,
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
 				3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */,
 				073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
-				866F72F8184539EC00A67767 /* LoadedData.m in Sources */,
 				07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */,
+				866AF73D183C3E1400132562 /* Subject.m in Sources */,
 				3ADE0CA9182D8E01006C5424 /* ECDetailViewController.m in Sources */,
-				866F7301184539EC00A67767 /* CourseTracked.m in Sources */,
 				3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */,
+				866AF737183C3E1400132562 /* CourseTag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
