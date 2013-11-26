@@ -247,7 +247,7 @@
 {
     Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSString *cid = [NSString stringWithFormat:@"%@:%@", course.subject.number, course.number];
+    NSString *cid = [NSString stringWithFormat:@"%@:%@ (%@ credits)", course.subject.number, course.number, course.credits];
     NSMutableAttributedString *courseID = [[NSMutableAttributedString alloc] initWithString:cid];
 
     if ([course.subject.number isEqualToString:@"3460"])
