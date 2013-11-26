@@ -1,5 +1,5 @@
 //
-//  LoadedData.h
+//  CourseTracked.h
 //  ExtraCredits
 //
 //  Created by Purkhiser,Evan on 11/26/13.
@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Course;
 
-@interface LoadedData : NSManagedObject
+@interface CourseTracked : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * version;
+@property (nonatomic, retain) NSNumber * completed;
+@property (nonatomic, retain) Course *course;
 
 @end
