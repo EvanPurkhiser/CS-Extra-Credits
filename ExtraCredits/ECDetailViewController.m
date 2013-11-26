@@ -41,14 +41,14 @@
         self.navigationItem.title = @"";
         
         // Set course name label
-        self.detailNameLabel.text = [[self.detailItem valueForKey:@"name"] description];
-        self.detailNameLabel.textAlignment = NSTextAlignmentCenter;
-        self.detailNameLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
-        self.detailNameLabel.numberOfLines = 0;
-        self.detailNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.courseNameLabel.text = [[self.detailItem valueForKey:@"name"] description];
+        self.courseNameLabel.textAlignment = NSTextAlignmentCenter;
+        self.courseNameLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+        self.courseNameLabel.numberOfLines = 0;
+        self.courseNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
         // Set course description label
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"details"] description];
+        self.courseDescriptionView.text = [[self.detailItem valueForKey:@"details"] description];
     }
 }
 

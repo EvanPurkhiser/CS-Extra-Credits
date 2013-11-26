@@ -12,8 +12,8 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *courseNameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *courseDescriptionView;
 
 @end
