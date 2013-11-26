@@ -39,11 +39,12 @@
 
     if (self.detailItem) {
         
-        // Set nav. bar title (course subject:course number)
+        // Set nav. bar title (course subject:course number (credits))
         Course *course = self.detailItem;
-        self.navigationItem.title = [NSString stringWithFormat:@"%@:%@",
+        self.navigationItem.title = [NSString stringWithFormat:@"%@:%@ (%@ credits)",
                                      course.subject.number,
-                                     course.number];
+                                     course.number,
+                                     course.credits];
         
         // Set course name label
         self.courseNameLabel.text = [[self.detailItem valueForKey:@"name"] description];
