@@ -18,6 +18,7 @@
 @dynamic name;
 @dynamic number;
 @dynamic status;
+@dynamic credits;
 @dynamic alternatives;
 @dynamic prerequisites;
 @dynamic subject;
