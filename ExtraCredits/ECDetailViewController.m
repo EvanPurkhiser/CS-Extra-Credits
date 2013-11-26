@@ -36,8 +36,19 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.navigationItem.title = [[self.detailItem valueForKey:@"name"] description];
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"name"] description];
+        
+        // Set nav. bar title (none)
+        self.navigationItem.title = @"";
+        
+        // Set course name label
+        self.detailNameLabel.text = [[self.detailItem valueForKey:@"name"] description];
+        self.detailNameLabel.textAlignment = NSTextAlignmentCenter;
+        self.detailNameLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+        self.detailNameLabel.numberOfLines = 0;
+        self.detailNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        
+        // Set course description label
+        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"details"] description];
     }
 }
 
