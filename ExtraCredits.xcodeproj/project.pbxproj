@@ -11,9 +11,7 @@
 		073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */; };
 		07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DB6183C1B7E00AE4875 /* XYPieChart.m */; };
 		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
-		07644DC5183C1D1500AE4875 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC1183C1D1500AE4875 /* README.textile */; };
 		07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC2183C1D1500AE4875 /* LICENSE.txt */; };
-		07644DC7183C1D1500AE4875 /* gitignore.html in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC3183C1D1500AE4875 /* gitignore.html */; };
 		07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DC9183C230600AE4875 /* ECChartViewController.m */; };
 		3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A556FA1183EC82E00F3306C /* ECFilterViewController.m */; };
 		3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC004183B21F700A3770B /* ECMasterViewCell.m */; };
@@ -62,9 +60,7 @@
 		07644DB5183C1AD900AE4875 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		07644DB6183C1B7E00AE4875 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		07644DC0183C1D1500AE4875 /* XYPieChart.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYPieChart.podspec; sourceTree = "<group>"; };
-		07644DC1183C1D1500AE4875 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		07644DC2183C1D1500AE4875 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		07644DC3183C1D1500AE4875 /* gitignore.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gitignore.html; sourceTree = "<group>"; };
 		07644DC8183C230600AE4875 /* ECChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECChartViewController.h; sourceTree = "<group>"; };
 		07644DC9183C230600AE4875 /* ECChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECChartViewController.m; sourceTree = "<group>"; };
 		3A556FA0183EC82E00F3306C /* ECFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFilterViewController.h; sourceTree = "<group>"; };
@@ -168,31 +164,16 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
-				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
-				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
-				07644DC8183C230600AE4875 /* ECChartViewController.h */,
-				07644DC9183C230600AE4875 /* ECChartViewController.m */,
+				86C8697718454CF300149603 /* TabControllers */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
-				07644DB5183C1AD900AE4875 /* XYPieChart.h */,
-				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
-				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
-				073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */,
-				073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */,
 				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
-				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
-				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
-				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
-				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
-				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
-				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
-				073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */,
-				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
-				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
+				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
 				3ADE0C9E182D8E01006C5424 /* Main_iPad.storyboard */,
 				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
 				86182C8C183AC46700245C21 /* Models */,
 				3ADE0C90182D8E01006C5424 /* Supporting Files */,
+				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
 			);
 			path = ExtraCredits;
 			sourceTree = "<group>";
@@ -200,10 +181,8 @@
 		3ADE0C90182D8E01006C5424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
-				07644DC1183C1D1500AE4875 /* README.textile */,
+				86C8697918454DB400149603 /* XYPIeChart */,
 				07644DC2183C1D1500AE4875 /* LICENSE.txt */,
-				07644DC3183C1D1500AE4875 /* gitignore.html */,
 				86BD6BBE1836CD97007856EB /* CourseSeed.plist */,
 				3ADE0C91182D8E01006C5424 /* ExtraCredits-Info.plist */,
 				3ADE0C92182D8E01006C5424 /* InfoPlist.strings */,
@@ -245,6 +224,45 @@
 				866AF733183C3E1300132562 /* LoadedData.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		86C8697718454CF300149603 /* TabControllers */ = {
+			isa = PBXGroup;
+			children = (
+				86C8697818454D4800149603 /* Master */,
+				07644DC8183C230600AE4875 /* ECChartViewController.h */,
+				07644DC9183C230600AE4875 /* ECChartViewController.m */,
+				073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */,
+				073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */,
+				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
+				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
+				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
+				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
+				073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */,
+				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
+			);
+			name = TabControllers;
+			sourceTree = "<group>";
+		};
+		86C8697818454D4800149603 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
+				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
+				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
+				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		86C8697918454DB400149603 /* XYPIeChart */ = {
+			isa = PBXGroup;
+			children = (
+				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
+				07644DB5183C1AD900AE4875 /* XYPieChart.h */,
+				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
+			);
+			name = XYPIeChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +351,6 @@
 				3ADE0C9D182D8E01006C5424 /* Main_iPhone.storyboard in Resources */,
 				07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */,
 				3ADE0C94182D8E01006C5424 /* InfoPlist.strings in Resources */,
-				07644DC5183C1D1500AE4875 /* README.textile in Resources */,
-				07644DC7183C1D1500AE4875 /* gitignore.html in Resources */,
 				07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
