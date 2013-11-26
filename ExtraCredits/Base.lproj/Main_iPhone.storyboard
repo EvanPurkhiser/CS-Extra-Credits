@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bqc-AR-AmV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Courses-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
                 <navigationController id="rS3-R9-Ivy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Courses" image="pencil.png" id="WWo-sR-fHa"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="list" id="WWo-sR-fHa"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -242,7 +242,7 @@
         <scene sceneID="MTG-sS-KpZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rmr-Jh-5zB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Progress" image="pie-chart.png" id="Ekd-s1-hhq"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="pie_chart" id="Ekd-s1-hhq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mrx-8r-Uvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -279,7 +279,7 @@
         <scene sceneID="HOB-sU-wE6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nlh-Sh-4un" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Advising" image="woman.png" id="tXI-8u-JtD"/>
+                    <tabBarItem key="tabBarItem" title="Advising" image="following" id="tXI-8u-JtD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AaW-V0-aWF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -330,7 +330,7 @@
         <scene sceneID="H5K-xU-VyV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="euC-69-vvJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear.png" id="80m-NT-8OZ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="cog" id="80m-NT-8OZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NMV-o2-Yop">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -347,10 +347,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear.png" width="30" height="30"/>
-        <image name="pencil.png" width="30" height="30"/>
-        <image name="pie-chart.png" width="30" height="30"/>
-        <image name="woman.png" width="30" height="30"/>
+        <image name="cog" width="32" height="32"/>
+        <image name="following" width="32" height="32"/>
+        <image name="list" width="32" height="32"/>
+        <image name="pie_chart" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
