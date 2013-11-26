@@ -8,10 +8,15 @@
         <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisites" inverseEntity="Course" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="courses" inverseEntity="Subject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTag" inverseName="courses" inverseEntity="CourseTag" syncable="YES"/>
+        <relationship name="tracked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseTracked" inverseName="course" inverseEntity="CourseTracked" syncable="YES"/>
     </entity>
     <entity name="CourseTag" representedClassName="CourseTag" syncable="YES">
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="tags" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="CourseTracked" representedClassName="CourseTracked" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="tracked" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="LoadedData" representedClassName="LoadedData" syncable="YES">
         <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -22,9 +27,10 @@
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="subject" inverseEntity="Course" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-189" positionY="-240" width="128" height="150"/>
-        <element name="CourseTag" positionX="-18" positionY="42" width="128" height="75"/>
-        <element name="LoadedData" positionX="63" positionY="-117" width="128" height="60"/>
-        <element name="Subject" positionX="-272" positionY="99" width="128" height="90"/>
+        <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CourseTag" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LoadedData" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Subject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CourseTracked" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
