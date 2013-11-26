@@ -4,19 +4,15 @@
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="alternatives" inverseEntity="Course" syncable="YES"/>
         <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisites" inverseEntity="Course" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="courses" inverseEntity="Subject" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CourseTag" inverseName="courses" inverseEntity="CourseTag" syncable="YES"/>
-        <relationship name="tracked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseTracked" inverseName="course" inverseEntity="CourseTracked" syncable="YES"/>
     </entity>
     <entity name="CourseTag" representedClassName="CourseTag" syncable="YES">
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="tags" inverseEntity="Course" syncable="YES"/>
-    </entity>
-    <entity name="CourseTracked" representedClassName="CourseTracked" syncable="YES">
-        <attribute name="completed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="tracked" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="LoadedData" representedClassName="LoadedData" syncable="YES">
         <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -31,6 +27,5 @@
         <element name="CourseTag" positionX="0" positionY="0" width="0" height="0"/>
         <element name="LoadedData" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Subject" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CourseTracked" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

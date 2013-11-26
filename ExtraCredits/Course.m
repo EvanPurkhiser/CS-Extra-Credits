@@ -17,10 +17,10 @@
 @dynamic details;
 @dynamic name;
 @dynamic number;
+@dynamic status;
 @dynamic alternatives;
 @dynamic prerequisites;
 @dynamic subject;
 @dynamic tags;
-@dynamic tracked;
 
 @end
