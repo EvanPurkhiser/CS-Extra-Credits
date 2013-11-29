@@ -89,7 +89,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     //set number of rows
-    if(component== 0)
+    if (component == 0)
     {
         return [self.courseSelectionOptions count];
     }
@@ -107,7 +107,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if(component== 0)
+    if (component == 0)
     {
         return [self.courseSelectionOptions objectAtIndex:row];
     }
@@ -121,8 +121,17 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     //Let's print in the console what the user had chosen;
-    NSLog(@"Chosen item: %@", [self.courseSelectionOptions objectAtIndex:row]);
+    if (component == 0)
+    {
+        NSLog(@"Chosen item: %@", [self.courseSelectionOptions objectAtIndex:row]);
+    }
+    else
+    {
+        NSLog(@"Chosen item: %@", [self.yearSelectionOptions objectAtIndex:row]);
+    }
 }
+
+
 
 
 #pragma mark - Split view
