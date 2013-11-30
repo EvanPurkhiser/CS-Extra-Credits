@@ -262,6 +262,14 @@
     {
         [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:70.0/255.0 green:150.0/255.0 blue:20.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
     }
+    if ([course.subject.number isEqualToString:@"6500"])
+    {
+        [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:202.0/255.0 green:20.0/255.0 blue:222.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
+    }
+    if ([course.subject.number isEqualToString:@"4450"])
+    {
+        [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:57.0/255.0 green:168.0/255.0 blue:155.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
+    }
 
     cell.courseName.text = course.name;
     cell.courseID.attributedText = courseID;
