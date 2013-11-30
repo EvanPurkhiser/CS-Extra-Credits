@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ECSettingsViewController : UIViewController
+@interface ECSettingsViewController : UITableViewController
 
 @end
