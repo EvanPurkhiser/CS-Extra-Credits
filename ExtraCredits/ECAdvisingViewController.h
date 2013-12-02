@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ECAdvisingViewController : UIViewController
+@interface ECAdvisingViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UIPickerView *advisorSelection;
+
+@property (strong, nonatomic) NSArray *advisorSelectionOptions;
+
+@property (strong, nonatomic) NSArray *scheduleYearSelectionOptions;
+
+- (IBAction) selectedPickerRow;
 
 @end
