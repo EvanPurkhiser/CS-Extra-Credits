@@ -2,7 +2,7 @@
 //  Course.h
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/26/13.
+//  Created by Purkhiser,Evan on 12/3/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
@@ -13,11 +13,12 @@
 
 @interface Course : NSManagedObject
 
+@property (nonatomic, retain) NSDecimalNumber * credits;
 @property (nonatomic, retain) NSString * details;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * number;
 @property (nonatomic, retain) NSNumber * status;
-@property (nonatomic, retain) NSDecimalNumber * credits;
+@property (nonatomic, retain) NSDecimalNumber * year;
 @property (nonatomic, retain) NSSet *alternatives;
 @property (nonatomic, retain) NSSet *prerequisites;
 @property (nonatomic, retain) Subject *subject;
