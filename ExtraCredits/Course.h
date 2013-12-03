@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#define COURSE_NOT_TAKEN  @0
+#define COURSE_HAVE_TAKEN @1
+#define COURSE_WILL_TAKE  @2
+#define COURSE_WONT_TAKE  @3
+
 @class Course, CourseTag, Subject;
 
 @interface Course : NSManagedObject

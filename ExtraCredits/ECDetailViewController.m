@@ -16,6 +16,9 @@
 @end
 
 @implementation ECDetailViewController
+{
+    NSDictionary *_courseStatus;
+}
 
 #pragma mark - Managing the detail item
 
@@ -59,11 +62,32 @@
         // Set course description label
         self.courseDescriptionView.text = [[self.detailItem valueForKey:@"details"] description];
         
-        self.courseSelectionOptions = [[NSArray alloc] initWithObjects:@"Haven't Taken", @"Taken", @"Will Take", @"Won't Take", nil];
-        self.yearSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018", nil];
+        _courseStatus = @{
+            @"Haven't Taken": COURSE_NOT_TAKEN,
+            @"Taken":         COURSE_HAVE_TAKEN,
+            @"Will Take":     COURSE_WILL_TAKE,
+            @"Won't Take":    COURSE_WONT_TAKE,
+        };
+
+        self.courseSelectionOptions = [_courseStatus allKeys];
+        self.yearSelectionOptions = @[@"Unknown", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;
+
+        NSInteger statusRow = [self.courseSelectionOptions indexOfObject:
+                               [_courseStatus allKeysForObject:self.detailItem.status][0]];
+        [self.courseSelection selectRow:statusRow inComponent:0 animated:NO];
+
+        if ([self.detailItem.year integerValue] == 0)
+        {
+            [self.courseSelection selectRow:0 inComponent:1 animated:NO];
+        }
+        else
+        {
+            NSInteger yearRow = [self.yearSelectionOptions indexOfObject:[self.detailItem.year stringValue]];
+            [self.courseSelection selectRow:yearRow inComponent:1 animated:NO];
+        }
     }
 }
 
@@ -144,12 +168,22 @@
     //Let's print in the console what the user had chosen;
     if (component == 0)
     {
-        NSLog(@"Chosen item: %@", [self.courseSelectionOptions objectAtIndex:row]);
+        self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:row]];
     }
     else
     {
-        NSLog(@"Chosen item: %@", [self.yearSelectionOptions objectAtIndex:row]);
+        if (row == 0)
+        {
+            // Year zero for unknown
+            self.detailItem.year = 0;
+        }
+        else
+        {
+            self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:row] intValue]];
+        }
     }
+
+    [[self.detailItem managedObjectContext] save:nil];
 }
 
 #pragma mark - Split view

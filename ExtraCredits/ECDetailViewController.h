@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Course.h"
 
 @interface ECDetailViewController : UIViewController <UISplitViewControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Course *detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *courseNameLabel;
 
