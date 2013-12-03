@@ -25,6 +25,9 @@
         _detailItem = newDetailItem;
         
         // Update the view.
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            [self disableControlsForiPad:NO];
+        }
         [self configureView];
     }
 
@@ -67,6 +70,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self disableControlsForiPad:YES];
+    }
+
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
@@ -77,6 +85,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) disableControlsForiPad:(BOOL) visible
+{
+    if (visible) {
+        self.courseDescriptionView.hidden = YES;
+        self.courseNameLabel.hidden = YES;
+        self.courseSelection.hidden = YES;
+    }
+    else {
+        self.courseDescriptionView.hidden = NO;
+        self.courseNameLabel.hidden = NO;
+        self.courseSelection.hidden = NO;
+    }
+}
 
 #pragma mark - UIPickerView DataSource
 // returns the number of 'columns' to display.
@@ -135,7 +156,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Courses", @"Courses");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
