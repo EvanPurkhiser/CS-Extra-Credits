@@ -59,8 +59,8 @@
         // Set course description label
         self.courseDescriptionView.text = [[self.detailItem valueForKey:@"details"] description];
         
-        self.courseSelectionOptions = [[NSArray alloc] initWithObjects:@"Haven't Taken", @"Will Take", @"Won't Take", nil];
-        self.yearSelectionOptions = [[NSArray alloc] initWithObjects:@"-",@"2014", @"2015", @"2016", @"2017", @"2018", nil];
+        self.courseSelectionOptions = [[NSArray alloc] initWithObjects:@"Haven't Taken", @"Taken", @"Will Take", @"Won't Take", nil];
+        self.yearSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018", nil];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;

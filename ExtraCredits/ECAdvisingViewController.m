@@ -32,7 +32,7 @@
 - (void)configureView
 {
     self.advisorSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"Dr. Chan", @"Dr. Cheng", @"Dr. Collard", @"Dr. Duan", @"Dr. Liszka", @"Dr. O’Neil", @"Dr. Sutton", @"Dr. Xiao", nil];
-    self.scheduleYearSelectionOptions = [[NSArray alloc] initWithObjects:@"-",@"2014", @"2015", @"2016", @"2017", @"2018", nil];
+    self.scheduleYearSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018", nil];
     
     self.advisorSelection.delegate = self;
     self.advisorSelection.dataSource = self;
