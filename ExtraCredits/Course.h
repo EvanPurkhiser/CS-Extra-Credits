@@ -13,12 +13,12 @@
 
 @interface Course : NSManagedObject
 
-@property (nonatomic, retain) NSDecimalNumber * credits;
+@property (nonatomic, retain) NSNumber * credits;
 @property (nonatomic, retain) NSString * details;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * number;
 @property (nonatomic, retain) NSNumber * status;
-@property (nonatomic, retain) NSDecimalNumber * year;
+@property (nonatomic, retain) NSNumber * year;
 @property (nonatomic, retain) NSSet *alternatives;
 @property (nonatomic, retain) NSSet *prerequisites;
 @property (nonatomic, retain) Subject *subject;
