@@ -232,14 +232,6 @@
 		86C8697718454CF300149603 /* TabControllers */ = {
 			isa = PBXGroup;
 			children = (
-				86C8697818454D4800149603 /* Master */,
-			);
-			name = TabControllers;
-			sourceTree = "<group>";
-		};
-		86C8697818454D4800149603 /* Master */ = {
-			isa = PBXGroup;
-			children = (
 				07644DC8183C230600AE4875 /* ECChartViewController.h */,
 				07644DC9183C230600AE4875 /* ECChartViewController.m */,
 				073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */,
@@ -252,10 +244,18 @@
 				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
 				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
 				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
-				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
-				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
 				3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */,
 				3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */,
+				86C8697818454D4800149603 /* Master */,
+			);
+			name = TabControllers;
+			sourceTree = "<group>";
+		};
+		86C8697818454D4800149603 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
+				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
 			);
 			name = Master;
 			sourceTree = "<group>";
