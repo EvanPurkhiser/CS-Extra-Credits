@@ -170,23 +170,26 @@
 //If the user chooses from the pickerview, it calls this function;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    //Let's print in the console what the user had chosen;
-    if (component == 0)
-    {
-        self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:row]];
-    }
-    else
-    {
-        if (row == 0)
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    ^{
+        //Let's print in the console what the user had chosen;
+        if (component == 0)
         {
-            // Year zero for unknown
-            self.detailItem.year = 0;
+            self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:row]];
         }
         else
         {
-            self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:row] intValue]];
+            if (row == 0)
+            {
+                // Year zero for unknown
+                self.detailItem.year = 0;
+            }
+            else
+            {
+                self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:row] intValue]];
+            }
         }
-    }
+    });
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
