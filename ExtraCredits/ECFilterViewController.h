@@ -19,8 +19,12 @@
 
 @property (nonatomic, weak) id <ECFilterViewControllerDelegate> delegate;
 
+@property NSArray *filterNames;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
+
+- (NSPredicate *) constructPredicate;
 
 @end
 

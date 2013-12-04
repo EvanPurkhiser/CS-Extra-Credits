@@ -37,6 +37,7 @@
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
 		86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C72183ABF8B00245C21 /* ECCourseLoader.m */; };
 		868C4CA4184E8DE200073A59 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 868C4CA3184E8DE200073A59 /* Course.m */; };
+		868C4CA8184EA46E00073A59 /* ECFilterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 868C4CA7184EA46E00073A59 /* ECFilterCellView.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
 		86C8697C1845524400149603 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C8697B1845524400149603 /* LoadedData.m */; };
 		86C869821845524500149603 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C869811845524500149603 /* Subject.m */; };
@@ -98,6 +99,8 @@
 		86182C72183ABF8B00245C21 /* ECCourseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCourseLoader.m; sourceTree = "<group>"; };
 		868C4CA2184E8DE200073A59 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		868C4CA3184E8DE200073A59 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		868C4CA6184EA46E00073A59 /* ECFilterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFilterCellView.h; sourceTree = "<group>"; };
+		868C4CA7184EA46E00073A59 /* ECFilterCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFilterCellView.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
 		86C8697A1845524400149603 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
 		86C8697B1845524400149603 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
@@ -229,6 +232,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		868C4CA5184EA44300073A59 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				868C4CA6184EA46E00073A59 /* ECFilterCellView.h */,
+				868C4CA7184EA46E00073A59 /* ECFilterCellView.m */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
 		86C8697718454CF300149603 /* TabControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,7 @@
 				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
 				3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */,
 				3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */,
+				868C4CA5184EA44300073A59 /* Filter */,
 				86C8697818454D4800149603 /* Master */,
 			);
 			name = TabControllers;
@@ -383,6 +396,7 @@
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				86C869821845524500149603 /* Subject.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
+				868C4CA8184EA46E00073A59 /* ECFilterCellView.m in Sources */,
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
 				3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */,
 				073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */,
