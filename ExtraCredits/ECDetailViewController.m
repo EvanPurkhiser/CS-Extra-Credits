@@ -63,14 +63,15 @@
         self.courseDescriptionView.text = [[self.detailItem valueForKey:@"details"] description];
         
         _courseStatus = @{
-            @"Haven't Taken": COURSE_NOT_TAKEN,
-            @"Taken":         COURSE_HAVE_TAKEN,
-            @"Will Take":     COURSE_WILL_TAKE,
-            @"Won't Take":    COURSE_WONT_TAKE,
+            @"Haven't": COURSE_NOT_TAKEN,
+            @"Have":         COURSE_HAVE_TAKEN,
+            @"Will":     COURSE_WILL_TAKE,
+            @"Won't":    COURSE_WONT_TAKE,
         };
 
         self.courseSelectionOptions = [_courseStatus allKeys];
-        self.yearSelectionOptions = @[@"Unknown", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
+        self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
+        self.semesterSelectionOptions = @[@"-", @"Spr", @"Sum", @"Fall"];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;
@@ -127,7 +128,7 @@
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 2;
+    return 3;
 }
 
 // returns the # of rows in each component..
@@ -135,13 +136,15 @@
 {
     //set number of rows
     if (component == 0)
-    {
         return [self.courseSelectionOptions count];
-    }
-    else
-    {
+    
+    if (component == 1)
         return [self.yearSelectionOptions count];
-    }
+    
+    if (component == 2)
+        return [self.semesterSelectionOptions count];
+    
+    return 0;
 }
 
 #pragma mark - UIPickerView Delegate
@@ -153,13 +156,15 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if (component == 0)
-    {
         return [self.courseSelectionOptions objectAtIndex:row];
-    }
-    else
-    {
+    
+    if (component == 1)
         return [self.yearSelectionOptions objectAtIndex:row];
-    }
+    
+    if (component == 2)
+        return [self.semesterSelectionOptions objectAtIndex:row];
+    
+    return 0;
 }
 
 //If the user chooses from the pickerview, it calls this function;

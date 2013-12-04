@@ -23,6 +23,8 @@
 
 @property (strong, nonatomic) NSArray *yearSelectionOptions;
 
+@property (strong, nonatomic) NSArray *semesterSelectionOptions;
+
 - (IBAction) selectedPickerRow;
 
 @end

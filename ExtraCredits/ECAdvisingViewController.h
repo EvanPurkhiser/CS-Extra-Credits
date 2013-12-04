@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) NSArray *scheduleYearSelectionOptions;
 
+@property (strong, nonatomic) NSArray *scheduleSemesterSelectionOptions;
+
 - (IBAction) selectedPickerRow;
 
 @end

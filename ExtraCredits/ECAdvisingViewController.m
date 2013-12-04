@@ -31,8 +31,9 @@
 
 - (void)configureView
 {
-    self.advisorSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"Dr. Chan", @"Dr. Cheng", @"Dr. Collard", @"Dr. Duan", @"Dr. Liszka", @"Dr. O’Neil", @"Dr. Sutton", @"Dr. Xiao", nil];
-    self.scheduleYearSelectionOptions = [[NSArray alloc] initWithObjects:@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018", nil];
+    self.advisorSelectionOptions = @[@"-", @"Chan", @"Cheng", @"Collard", @"Duan", @"Liszka", @"O’Neil", @"Sutton", @"Xiao"];
+    self.scheduleYearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
+    self.scheduleSemesterSelectionOptions = @[@"-", @"Spr", @"Sum", @"Fall"];
     
     self.advisorSelection.delegate = self;
     self.advisorSelection.dataSource = self;
@@ -48,7 +49,7 @@
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 2;
+    return 3;
 }
 
 // returns the # of rows in each component..
@@ -56,13 +57,13 @@
 {
     //set number of rows
     if (component == 0)
-    {
         return [self.advisorSelectionOptions count];
-    }
-    else
-    {
+    if (component == 1)
         return [self.scheduleYearSelectionOptions count];
-    }
+    if (component == 2)
+        return [self.scheduleSemesterSelectionOptions count];
+
+    return 0;
 }
 
 #pragma mark - UIPickerView Delegate
@@ -73,14 +74,15 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    
     if (component == 0)
-    {
         return [self.advisorSelectionOptions objectAtIndex:row];
-    }
-    else
-    {
+    if (component == 1)
         return [self.scheduleYearSelectionOptions objectAtIndex:row];
-    }
+    if (component == 2)
+        return [self.scheduleSemesterSelectionOptions objectAtIndex:row];
+    
+    return 0;
 }
 
 //If the user chooses from the pickerview, it calls this function;
