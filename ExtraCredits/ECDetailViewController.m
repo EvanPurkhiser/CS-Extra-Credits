@@ -187,11 +187,11 @@
             self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:row] intValue]];
         }
     }
+}
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-    ^{
-        [[self.detailItem managedObjectContext] save:nil];
-    });
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [[self.detailItem managedObjectContext] save:nil];
 }
 
 #pragma mark - Split view
