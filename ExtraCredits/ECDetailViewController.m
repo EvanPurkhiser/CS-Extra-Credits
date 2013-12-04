@@ -71,7 +71,7 @@
 
         self.courseSelectionOptions = [_courseStatus allKeys];
         self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
-        self.semesterSelectionOptions = @[@"-", @"Spr", @"Sum", @"Fall"];
+        self.semesterSelectionOptions = @[@"-", @"Spring", @"Summer", @"Fall"];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;
