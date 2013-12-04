@@ -104,6 +104,25 @@
     [self configureView];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:0]]];
+    
+    NSInteger yearRow = [self.courseSelection selectedRowInComponent:1];
+    NSLog(@"%ld", (long)yearRow);
+    if (yearRow == 0)
+    {
+        // Year zero for unknown
+        self.detailItem.year = 0;
+    }
+    else
+    {
+        self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:yearRow] intValue]];
+    }
+    
+    [[self.detailItem managedObjectContext] save:nil];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -165,36 +184,6 @@
         return [self.semesterSelectionOptions objectAtIndex:row];
     
     return 0;
-}
-
-//If the user chooses from the pickerview, it calls this function;
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-    ^{
-        //Let's print in the console what the user had chosen;
-        if (component == 0)
-        {
-            self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:row]];
-        }
-        else
-        {
-            if (row == 0)
-            {
-                // Year zero for unknown
-                self.detailItem.year = 0;
-            }
-            else
-            {
-                self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:row] intValue]];
-            }
-        }
-    });
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    [[self.detailItem managedObjectContext] save:nil];
 }
 
 #pragma mark - Split view
