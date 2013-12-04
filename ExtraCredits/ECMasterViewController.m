@@ -20,6 +20,9 @@
 @end
 
 @implementation ECMasterViewController
+{
+    NSPredicate *_predicate;
+}
 
 - (void)awakeFromNib
 {
@@ -165,6 +168,7 @@
     NSArray *sortDescriptors = @[sortSubject, sortNumber];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
+    [fetchRequest setPredicate:_predicate];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -284,6 +288,14 @@
 - (void)filterViewControllerDidSave:(ECFilterViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    // Set the predicate from the filters and force reload the fetched results
+    _predicate = [controller constructPredicate];
+
+    [NSFetchedResultsController deleteCacheWithName:@"Master"];
+    _fetchedResultsController = nil;
+
+    [self.tableView reloadData];
 }
 
 @end
