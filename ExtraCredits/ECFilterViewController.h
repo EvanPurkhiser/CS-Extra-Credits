@@ -19,7 +19,8 @@
 
 @property (nonatomic, weak) id <ECFilterViewControllerDelegate> delegate;
 
-@property NSArray *filterNames;
+@property NSArray      *filterNames;
+@property NSDictionary *filterPredicates;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

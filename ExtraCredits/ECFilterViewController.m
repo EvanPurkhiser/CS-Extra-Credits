@@ -9,6 +9,7 @@
 #import "ECFilterViewController.h"
 #import "ECMasterViewController.h"
 #import "ECFilterCellView.h"
+#import "Course.h"
 
 @interface ECFilterViewController ()
 
@@ -29,11 +30,28 @@
 {
     [super viewDidLoad];
 
-    self.filterNames = @[@"Core Requirements",
-                         @"Systems Track Required",
-                         @"Business Track Required",
-                         @"Completed Courses",
-                         @"Incomplete Courses"];
+    // Setup predicate logic for each filter
+    self.filterPredicates = @{
+        @"Systems Track Required":
+        ^{
+            return [NSPredicate predicateWithFormat:@"ANY tags.tag = %@", @"systems-core"];
+        },
+        @"Management Track Required":
+        ^{
+
+            return [NSPredicate predicateWithFormat:@"ANY tags.tag = %@", @"management-core"];
+        },
+        @"Completed Courses":
+        ^{
+            return [NSPredicate predicateWithFormat:@"status = %@", COURSE_HAVE_TAKEN];
+        },
+        @"Incomplete Courses":
+        ^{
+            return [NSPredicate predicateWithFormat:@"status = %@ OR status = %@", COURSE_NOT_TAKEN, COURSE_WILL_TAKE];
+        },
+    };
+
+    self.filterNames = [self.filterPredicates allKeys];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -77,10 +95,19 @@
 // Construct the predicate from the current filter status
 -(NSPredicate *)constructPredicate
 {
+    NSMutableArray *predicates = [NSMutableArray new];
 
+    for (NSInteger i = 0; i < [self.tableView numberOfRowsInSection:0]; ++i)
+    {
+        ECFilterCellView *cell = (ECFilterCellView *) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
 
+        if (cell.statusSwitch.on)
+        {
+            [predicates addObject:((id(^)()) self.filterPredicates[cell.filterName.text])()];
+        }
+    }
 
-
+    return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
 }
 
 @end
