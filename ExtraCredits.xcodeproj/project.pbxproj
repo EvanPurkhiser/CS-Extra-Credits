@@ -12,7 +12,6 @@
 		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
 		07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC2183C1D1500AE4875 /* LICENSE.txt */; };
 		07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DC9183C230600AE4875 /* ECChartViewController.m */; };
-		3A09493F18497D4800FBE93C /* ECCoursesTakenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */; };
 		3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A556FA1183EC82E00F3306C /* ECFilterViewController.m */; };
 		3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC004183B21F700A3770B /* ECMasterViewCell.m */; };
 		3ADE0C88182D8E01006C5424 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C87182D8E01006C5424 /* Foundation.framework */; };
@@ -62,8 +61,6 @@
 		07644DC2183C1D1500AE4875 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		07644DC8183C230600AE4875 /* ECChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECChartViewController.h; sourceTree = "<group>"; };
 		07644DC9183C230600AE4875 /* ECChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECChartViewController.m; sourceTree = "<group>"; };
-		3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoursesTakenViewController.h; sourceTree = "<group>"; };
-		3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoursesTakenViewController.m; sourceTree = "<group>"; };
 		3A556FA0183EC82E00F3306C /* ECFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFilterViewController.h; sourceTree = "<group>"; };
 		3A556FA1183EC82E00F3306C /* ECFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFilterViewController.m; sourceTree = "<group>"; };
 		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMasterViewCell.h; sourceTree = "<group>"; };
@@ -251,8 +248,6 @@
 				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
 				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
 				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
-				3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */,
-				3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */,
 				868C4CA5184EA44300073A59 /* Filter */,
 				86C8697818454D4800149603 /* Master */,
 			);
@@ -386,7 +381,6 @@
 				07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */,
 				86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */,
 				3ADE0C9A182D8E01006C5424 /* ECAppDelegate.m in Sources */,
-				3A09493F18497D4800FBE93C /* ECCoursesTakenViewController.m in Sources */,
 				86C869851845524500149603 /* CourseTag.m in Sources */,
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
 				86C869821845524500149603 /* Subject.m in Sources */,
