@@ -82,6 +82,8 @@
     NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
     courseRequest.sortDescriptors = @[sortSubject, sortNumber];
     
+    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
+    
     // First item is systems track
     if (self.track.selectedSegmentIndex == 0)
     {
@@ -107,8 +109,6 @@
             [_slices addObject:one];
         }
     }
-    
-    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
     
     NSLog(@"%lu", (unsigned long)[courses count]);
     
