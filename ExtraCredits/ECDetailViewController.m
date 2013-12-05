@@ -63,6 +63,10 @@
         // Set course description label
         self.courseDescriptionView.text = [[self.detailItem valueForKey:@"details"] description];
         
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            self.courseDescriptionView.font = [UIFont fontWithName:@"TrebuchetMS" size:18];
+        }
+        
         _courseStatus = @{
             @"Haven't": COURSE_NOT_TAKEN,
             @"Have":    COURSE_HAVE_TAKEN,
