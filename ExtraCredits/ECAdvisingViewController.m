@@ -7,12 +7,18 @@
 //
 
 #import "ECAdvisingViewController.h"
+#import "ECAppDelegate.h"
+#import "Course.h"
 
 @interface ECAdvisingViewController ()
 
 @end
 
 @implementation ECAdvisingViewController
+{
+    NSDictionary *_advisors;
+    NSDictionary *_courseSemester;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +37,27 @@
 
 - (void)configureView
 {
-    self.advisorSelectionOptions = @[@"-", @"Chan", @"Cheng", @"Collard", @"Duan", @"Liszka", @"O’Neil", @"Sutton", @"Xiao"];
+    _advisors = @{
+        @"Chan":    @"collard@uakron.edu",
+        @"Cheng":   @"collard@uakron.edu",
+        @"Collard": @"collard@uakron.edu",
+        @"Duan":    @"collard@uakron.edu",
+        @"Liszka":  @"collard@uakron.edu",
+        @"O’Neil":  @"collard@uakron.edu",
+        @"Sutton":  @"collard@uakron.edu",
+        @"Xiao":    @"collard@uakron.edu",
+    };
+
+    _courseSemester = @{
+        @"Spring": COURSE_SPRING,
+        @"Summer": COURSE_SUMMER,
+        @"Fall":   COURSE_FALL,
+    };
+
+    self.advisorSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_advisors allKeys]];
     self.scheduleYearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
-    self.scheduleSemesterSelectionOptions = @[@"-", @"Spr", @"Sum", @"Fall"];
+    self.scheduleSemesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[[_courseSemester allKeys] sortedArrayUsingSelector:
+                                                                                    @selector(localizedCaseInsensitiveCompare:)]];
     
     self.advisorSelection.delegate = self;
     self.advisorSelection.dataSource = self;
@@ -85,19 +109,46 @@
     return 0;
 }
 
-//If the user chooses from the pickerview, it calls this function;
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+- (IBAction)sendEmail:(id)sender
 {
-    //Let's print in the console what the user had chosen;
-    if (component == 0)
-    {
-        NSLog(@"Chosen item: %@", [self.advisorSelectionOptions objectAtIndex:row]);
-    }
-    else
-    {
-        NSLog(@"Chosen item: %@", [self.scheduleYearSelectionOptions objectAtIndex:row]);
-    }
-}
+    ECAppDelegate *appDelegate = (ECAppDelegate *) [[UIApplication sharedApplication] delegate];
 
+    NSFetchRequest *courseRequest = [NSFetchRequest new];
+    courseRequest.entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:appDelegate.managedObjectContext];
+
+    NSNumber *semester = _courseSemester[[self.scheduleSemesterSelectionOptions objectAtIndex:[self.advisorSelection selectedRowInComponent:2]]];
+    NSNumber *year     = [self.scheduleYearSelectionOptions objectAtIndex:[self.advisorSelection selectedRowInComponent:1]];
+
+    courseRequest.predicate = [NSPredicate predicateWithFormat:@"status = %@ AND semester = %@ AND year = %@", COURSE_WILL_TAKE, semester, year];
+
+    NSArray *courses = [appDelegate.managedObjectContext executeFetchRequest:courseRequest error:nil];
+
+    // Notify if no courses to email
+    if ([courses count] == 0)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Nope!" message:@"No courses marked to be taken for the specified year / semester" delegate:self cancelButtonTitle:@"Oh, ok" otherButtonTitles: nil] show];
+
+        return;
+    }
+
+    NSString *advisor = [self.advisorSelectionOptions objectAtIndex:[self.advisorSelection selectedRowInComponent:0]];
+    NSString *email = _advisors[advisor];
+
+    NSMutableString *messages = [NSMutableString new];
+
+    for (Course *course in courses)
+    {
+        [messages appendFormat:@" * %@\n", course.name];
+    }
+
+    NSString *message = [NSString stringWithFormat:@"Dr. %@,\n\nHere's a list of courses I was looking at taking:\n\n%@\n What do you think?\n\nThanks,", advisor, messages];
+
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@",
+                                                [email stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+                                                [@"Advising" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+                                                [message stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
+
+    [[UIApplication sharedApplication] openURL:url];
+}
 
 @end
