@@ -38,7 +38,6 @@
         },
         @"Management Track Required":
         ^{
-
             return [NSPredicate predicateWithFormat:@"ANY tags.tag = %@", @"management-core"];
         },
         @"Completed Courses":
