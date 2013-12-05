@@ -93,6 +93,16 @@
                        [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
                        [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
                        [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
+    
+    // Add 5 slices of random value
+    for (int i = 0; i < 5; i++)
+    {
+        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
+        [_slices addObject:one];
+    }
+    
+    // Reload data
+    [self.pieChart reloadData];
 }
 
 - (void)viewDidUnload
@@ -111,21 +121,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Add 5 slices of random value
-    for (int i = 0; i < 5; i++)
-    {
-        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
-        [_slices addObject:one];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // Reload data
-    [self.pieChart reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -215,6 +215,7 @@
     [self loadChart];
 
     NSLog(@"testing");
+    NSLog(@"Selected Index:%ld", (long)self.track.selectedSegmentIndex);
 }
 
 @end
