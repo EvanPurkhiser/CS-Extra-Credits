@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="1558" y="-1373"/>
         </scene>
-        <!--View Controller-->
+        <!--Chart View Controller - Progress-->
         <scene sceneID="qY0-PC-aEt">
             <objects>
-                <viewController id="K2e-y2-hyU" sceneMemberID="viewController">
+                <viewController id="K2e-y2-hyU" customClass="ECChartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rG-kn-vdv"/>
                         <viewControllerLayoutGuide type="bottom" id="hFq-hE-zgR"/>
@@ -220,14 +220,24 @@
                     <view key="view" contentMode="scaleToFill" id="3Kv-4e-rRq">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6m-Hh-DC2" customClass="XYPieChart">
+                                <rect key="frame" x="108" y="107" width="324" height="307"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XL6-LJ-shc"/>
+                    <navigationItem key="navigationItem" title="Progress" id="XL6-LJ-shc"/>
+                    <connections>
+                        <outlet property="pieChart" destination="N6m-Hh-DC2" id="rJ1-CL-M1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6e-rj-H1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="-1373"/>
+            <point key="canvasLocation" x="3030" y="-1380"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -268,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="848" y="-1373"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Nav Popover View Controller-->
         <scene sceneID="5n9-JT-Ufg">
             <objects>
-                <tableViewController modalPresentationStyle="formSheet" id="ZrW-zO-Nh8" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="formSheet" id="ZrW-zO-Nh8" customClass="ECNavPopoverViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="WmB-9r-Ze5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,10 +344,10 @@
             </objects>
             <point key="canvasLocation" x="1330" y="-392"/>
         </scene>
-        <!--View Controller-->
+        <!--Advising View Controller - Advising-->
         <scene sceneID="6jE-5H-P9U">
             <objects>
-                <viewController id="y4H-9Z-U4q" sceneMemberID="viewController">
+                <viewController id="y4H-9Z-U4q" customClass="ECAdvisingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PLY-Z5-uZZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cnn-4V-t2g"/>
@@ -348,7 +358,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bT0-Se-5Ma"/>
+                    <navigationItem key="navigationItem" title="Advising" id="bT0-Se-5Ma"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVF-Q5-8id" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

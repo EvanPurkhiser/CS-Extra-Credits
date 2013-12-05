@@ -41,6 +41,7 @@
 		86C8697C1845524400149603 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C8697B1845524400149603 /* LoadedData.m */; };
 		86C869821845524500149603 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C869811845524500149603 /* Subject.m */; };
 		86C869851845524500149603 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C869841845524500149603 /* CourseTag.m */; };
+		F78642021850F30700B08366 /* ECNavPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78642011850F30700B08366 /* ECNavPopoverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		86C869811845524500149603 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		86C869831845524500149603 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
 		86C869841845524500149603 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
+		F78642001850F30700B08366 /* ECNavPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNavPopoverViewController.h; sourceTree = "<group>"; };
+		F78642011850F30700B08366 /* ECNavPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNavPopoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
+				F78641FF1850F2A800B08366 /* iPadOnly */,
 				86C8697718454CF300149603 /* TabControllers */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
@@ -276,6 +280,15 @@
 				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
 			);
 			name = XYPIeChart;
+			sourceTree = "<group>";
+		};
+		F78641FF1850F2A800B08366 /* iPadOnly */ = {
+			isa = PBXGroup;
+			children = (
+				F78642001850F30700B08366 /* ECNavPopoverViewController.h */,
+				F78642011850F30700B08366 /* ECNavPopoverViewController.m */,
+			);
+			name = iPadOnly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +408,7 @@
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
 				3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */,
 				868C4CA4184E8DE200073A59 /* Course.m in Sources */,
+				F78642021850F30700B08366 /* ECNavPopoverViewController.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
 				86C8697C1845524400149603 /* LoadedData.m in Sources */,
 				07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */,
