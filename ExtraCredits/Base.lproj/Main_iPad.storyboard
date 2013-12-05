@@ -55,9 +55,14 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Advising" id="Exa-SN-wzf"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="YPf-rj-Tgi"/>
-                        <barButtonItem title="Progress" id="ZlD-L2-Ic8"/>
+                        <barButtonItem image="list" id="ZlD-L2-Ic8">
+                            <connections>
+                                <segue destination="zZT-WV-rv4" kind="popover" popoverAnchorBarButtonItem="ZlD-L2-Ic8" id="Xq6-vk-THL">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="ExtraCredits" id="mOI-FS-AaM"/>
                     <connections>
@@ -241,7 +246,60 @@
             </objects>
             <point key="canvasLocation" x="848" y="-1373"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YwY-w9-L3L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zZT-WV-rv4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3G-UB-mzK">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZrW-zO-Nh8" kind="popover" identifier="navPopOver" id="eQ3-rl-ks3">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1W-pV-gT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280" y="248"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="5n9-JT-Ufg">
+            <objects>
+                <tableViewController modalPresentationStyle="formSheet" id="ZrW-zO-Nh8" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WmB-9r-Ze5">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="shw-5s-h1u">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="shw-5s-h1u" id="DgL-6Z-axA">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZrW-zO-Nh8" id="8kZ-ct-kwD"/>
+                            <outlet property="delegate" destination="ZrW-zO-Nh8" id="BlG-lV-t6S"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xC-K8-X8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2434" y="-76"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="list" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
