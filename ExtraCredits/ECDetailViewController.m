@@ -18,6 +18,7 @@
 @implementation ECDetailViewController
 {
     NSDictionary *_courseStatus;
+    NSDictionary *_courseSemester;
 }
 
 #pragma mark - Managing the detail item
@@ -64,15 +65,21 @@
         
         _courseStatus = @{
             @"Haven't": COURSE_NOT_TAKEN,
-            @"Have":         COURSE_HAVE_TAKEN,
-            @"Will":     COURSE_WILL_TAKE,
-            @"Won't":    COURSE_WONT_TAKE,
+            @"Have":    COURSE_HAVE_TAKEN,
+            @"Will":    COURSE_WILL_TAKE,
+            @"Won't":   COURSE_WONT_TAKE,
+        };
+
+        _courseSemester = @{
+            @"Spring": COURSE_SPRING,
+            @"Summer": COURSE_SUMMER,
+            @"Fall":   COURSE_FALL,
         };
 
         self.courseSelectionOptions = [[_courseStatus allKeys] sortedArrayUsingSelector:
                                                               @selector(localizedCaseInsensitiveCompare:)];;
         self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
-        self.semesterSelectionOptions = @[@"-", @"Spring", @"Summer", @"Fall"];
+        self.semesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_courseSemester allKeys]];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;
@@ -89,6 +96,16 @@
         {
             NSInteger yearRow = [self.yearSelectionOptions indexOfObject:[self.detailItem.year stringValue]];
             [self.courseSelection selectRow:yearRow inComponent:1 animated:NO];
+        }
+
+        if ([self.detailItem.semester integerValue] == 0)
+        {
+            [self.courseSelection selectRow:0 inComponent:2 animated:NO];
+        }
+        else
+        {
+            NSInteger semesterRow = [self.semesterSelectionOptions indexOfObject:[_courseSemester allKeysForObject:self.detailItem.semester][0]];
+            [self.courseSelection selectRow:semesterRow inComponent:2 animated:NO];
         }
     }
 }
@@ -109,8 +126,9 @@
 {
     self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:0]]];
     
+
     NSInteger yearRow = [self.courseSelection selectedRowInComponent:1];
-    NSLog(@"%ld", (long)yearRow);
+
     if (yearRow == 0)
     {
         // Year zero for unknown
@@ -121,6 +139,18 @@
         self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:yearRow] intValue]];
     }
     
+    NSInteger semesterRow = [self.courseSelection selectedRowInComponent:2];
+
+    if (semesterRow == 0)
+    {
+        // Semester 0 for unknown
+        self.detailItem.semester = 0;
+    }
+    else
+    {
+        self.detailItem.semester = _courseSemster[[self.semesterSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:2]]];
+    }
+
     [[self.detailItem managedObjectContext] save:nil];
 }
 
