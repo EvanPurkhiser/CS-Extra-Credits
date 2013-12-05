@@ -365,7 +365,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Advising" id="bT0-Se-5Ma"/>
+                    <navigationItem key="navigationItem" title="Advising" id="bT0-Se-5Ma">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ynt-yX-iCK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="advisorSelection" destination="8HO-uT-38C" id="5vd-ib-ht7"/>
                     </connections>
