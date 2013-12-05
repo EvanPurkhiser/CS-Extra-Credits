@@ -367,7 +367,11 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Advising" id="bT0-Se-5Ma">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ynt-yX-iCK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ynt-yX-iCK">
+                            <connections>
+                                <action selector="sendEmail:" destination="y4H-9Z-U4q" id="c05-Ma-rpx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="advisorSelection" destination="8HO-uT-38C" id="5vd-ib-ht7"/>

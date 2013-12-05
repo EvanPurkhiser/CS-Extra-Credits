@@ -54,9 +54,9 @@
         @"Fall":   COURSE_FALL,
     };
 
-    self.advisorSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_advisors allKeys]];
-    self.scheduleYearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
-    self.scheduleSemesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[[_courseSemester allKeys] sortedArrayUsingSelector:
+    self.advisorSelectionOptions = [@[@""] arrayByAddingObjectsFromArray:[_advisors allKeys]];
+    self.scheduleYearSelectionOptions = @[@"", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
+    self.scheduleSemesterSelectionOptions = [@[@""] arrayByAddingObjectsFromArray:[[_courseSemester allKeys] sortedArrayUsingSelector:
                                                                                     @selector(localizedCaseInsensitiveCompare:)]];
     
     self.advisorSelection.delegate = self;
