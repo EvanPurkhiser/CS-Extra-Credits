@@ -148,7 +148,7 @@
     }
     else
     {
-        self.detailItem.semester = _courseSemster[[self.semesterSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:2]]];
+        self.detailItem.semester = _courseSemester[[self.semesterSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:2]]];
     }
 
     [[self.detailItem managedObjectContext] save:nil];
