@@ -122,7 +122,39 @@
     [self configureView];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+- (void) saveiPadDetail:(id)sender
+{
+    self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:0]]];
+    
+    
+    NSInteger yearRow = [self.courseSelection selectedRowInComponent:1];
+    
+    if (yearRow == 0)
+    {
+        // Year zero for unknown
+        self.detailItem.year = 0;
+    }
+    else
+    {
+        self.detailItem.year = [NSNumber numberWithInt:[[self.yearSelectionOptions objectAtIndex:yearRow] intValue]];
+    }
+    
+    NSInteger semesterRow = [self.courseSelection selectedRowInComponent:2];
+    
+    if (semesterRow == 0)
+    {
+        // Semester 0 for unknown
+        self.detailItem.semester = 0;
+    }
+    else
+    {
+        self.detailItem.semester = _courseSemester[[self.semesterSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:2]]];
+    }
+    
+    [[self.detailItem managedObjectContext] save:nil];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
 {
     self.detailItem.status = _courseStatus[[self.courseSelectionOptions objectAtIndex:[self.courseSelection selectedRowInComponent:0]]];
     

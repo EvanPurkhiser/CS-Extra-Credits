@@ -65,7 +65,11 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="ExtraCredits" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="F34-UQ-bAB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="F34-UQ-bAB">
+                            <connections>
+                                <action selector="saveiPadDetail:" destination="JEX-9P-axG" id="2te-YU-bqA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="courseDescriptionView" destination="yCt-c2-vrs" id="sae-o1-CG7"/>
