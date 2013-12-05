@@ -69,7 +69,8 @@
             @"Won't":    COURSE_WONT_TAKE,
         };
 
-        self.courseSelectionOptions = [_courseStatus allKeys];
+        self.courseSelectionOptions = [[_courseStatus allKeys] sortedArrayUsingSelector:
+                                                              @selector(localizedCaseInsensitiveCompare:)];;
         self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
         self.semesterSelectionOptions = @[@"-", @"Spring", @"Summer", @"Fall"];
         
