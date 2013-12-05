@@ -355,10 +355,19 @@
                     <view key="view" contentMode="scaleToFill" id="bur-tt-BCq">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8HO-uT-38C">
+                                <rect key="frame" x="0.0" y="305" width="540" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Advising" id="bT0-Se-5Ma"/>
+                    <connections>
+                        <outlet property="advisorSelection" destination="8HO-uT-38C" id="5vd-ib-ht7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVF-Q5-8id" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

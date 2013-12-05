@@ -253,7 +253,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Advising" id="0VU-oS-IYQ"/>
+                    <navigationItem key="navigationItem" title="Advising" id="0VU-oS-IYQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="CMP-8R-2JO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="advisorSelection" destination="qVl-qc-a5C" id="39T-Fu-1fW"/>
                     </connections>
