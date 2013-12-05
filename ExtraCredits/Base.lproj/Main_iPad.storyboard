@@ -328,7 +328,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="nBB-xO-6GE" kind="modal" identifier="modalAdvising" trigger="accessoryAction" modalPresentationStyle="formSheet" id="CoA-vF-yVi"/>
+                                            <segue destination="nBB-xO-6GE" kind="modal" identifier="modalAdvising" modalPresentationStyle="formSheet" id="MpS-6Q-POa"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -409,7 +409,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7o-c2-PhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2321" y="-656"/>
+            <point key="canvasLocation" x="2363" y="-656"/>
         </scene>
     </scenes>
     <resources>
