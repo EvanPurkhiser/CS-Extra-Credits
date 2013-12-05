@@ -38,14 +38,14 @@
 - (void)configureView
 {
     _advisors = @{
-        @"Chan":    @"collard@uakron.edu",
-        @"Cheng":   @"collard@uakron.edu",
+        @"Chan":    @"chan@uakron.edu",
+        @"Cheng":   @"echeng@uakron.edu",
         @"Collard": @"collard@uakron.edu",
-        @"Duan":    @"collard@uakron.edu",
-        @"Liszka":  @"collard@uakron.edu",
-        @"O’Neil":  @"collard@uakron.edu",
-        @"Sutton":  @"collard@uakron.edu",
-        @"Xiao":    @"collard@uakron.edu",
+        @"Duan":    @"duan@uakron.edu",
+        @"Liszka":  @"liszka@uakron.edu",
+        @"O’Neil":  @"toneil@uakron.edu ",
+        @"Sutton":  @"asutton@uakron.edu",
+        @"Xiao":    @"xiao@uakron.edu",
     };
 
     _courseSemester = @{
