@@ -7,13 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Course.h"
 
-@interface ECDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface ECDetailViewController : UIViewController <UISplitViewControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Course *detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *courseNameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *courseDescriptionView;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *courseSelection;
+
+@property (strong, nonatomic) NSArray *courseSelectionOptions;
+
+@property (strong, nonatomic) NSArray *yearSelectionOptions;
+
+@property (strong, nonatomic) NSArray *semesterSelectionOptions;
+
+- (IBAction) selectedPickerRow;
 
 @end

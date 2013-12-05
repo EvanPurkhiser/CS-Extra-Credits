@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */; };
-		073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */; };
 		07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DB6183C1B7E00AE4875 /* XYPieChart.m */; };
 		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
-		07644DC5183C1D1500AE4875 /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC1183C1D1500AE4875 /* README.textile */; };
 		07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC2183C1D1500AE4875 /* LICENSE.txt */; };
-		07644DC7183C1D1500AE4875 /* gitignore.html in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC3183C1D1500AE4875 /* gitignore.html */; };
 		07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DC9183C230600AE4875 /* ECChartViewController.m */; };
+		3A09493F18497D4800FBE93C /* ECCoursesTakenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */; };
 		3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A556FA1183EC82E00F3306C /* ECFilterViewController.m */; };
 		3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC004183B21F700A3770B /* ECMasterViewCell.m */; };
 		3ADE0C88182D8E01006C5424 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE0C87182D8E01006C5424 /* Foundation.framework */; };
@@ -37,11 +35,13 @@
 		3ADE0CBD182D8E01006C5424 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBB182D8E01006C5424 /* InfoPlist.strings */; };
 		3ADE0CBF182D8E01006C5424 /* ExtraCreditsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */; };
 		86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86182C72183ABF8B00245C21 /* ECCourseLoader.m */; };
-		866AF734183C3E1300132562 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF733183C3E1300132562 /* LoadedData.m */; };
-		866AF737183C3E1400132562 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF736183C3E1400132562 /* CourseTag.m */; };
-		866AF73D183C3E1400132562 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 866AF73C183C3E1400132562 /* Subject.m */; };
+		868C4CA4184E8DE200073A59 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 868C4CA3184E8DE200073A59 /* Course.m */; };
+		868C4CA8184EA46E00073A59 /* ECFilterCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 868C4CA7184EA46E00073A59 /* ECFilterCellView.m */; };
 		86BD6BBF1836CD97007856EB /* CourseSeed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86BD6BBE1836CD97007856EB /* CourseSeed.plist */; };
-		86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C85ABE183EE1EE007CBBC4 /* Course.m */; };
+		86C8697C1845524400149603 /* LoadedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C8697B1845524400149603 /* LoadedData.m */; };
+		86C869821845524500149603 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C869811845524500149603 /* Subject.m */; };
+		86C869851845524500149603 /* CourseTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C869841845524500149603 /* CourseTag.m */; };
+		F78642021850F30700B08366 /* ECNavPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78642011850F30700B08366 /* ECNavPopoverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,16 +57,14 @@
 /* Begin PBXFileReference section */
 		073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAdvisingViewController.h; sourceTree = "<group>"; };
 		073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAdvisingViewController.m; sourceTree = "<group>"; };
-		073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettingsViewController.h; sourceTree = "<group>"; };
-		073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettingsViewController.m; sourceTree = "<group>"; };
 		07644DB5183C1AD900AE4875 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		07644DB6183C1B7E00AE4875 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		07644DC0183C1D1500AE4875 /* XYPieChart.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYPieChart.podspec; sourceTree = "<group>"; };
-		07644DC1183C1D1500AE4875 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		07644DC2183C1D1500AE4875 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		07644DC3183C1D1500AE4875 /* gitignore.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gitignore.html; sourceTree = "<group>"; };
 		07644DC8183C230600AE4875 /* ECChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECChartViewController.h; sourceTree = "<group>"; };
 		07644DC9183C230600AE4875 /* ECChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECChartViewController.m; sourceTree = "<group>"; };
+		3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoursesTakenViewController.h; sourceTree = "<group>"; };
+		3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoursesTakenViewController.m; sourceTree = "<group>"; };
 		3A556FA0183EC82E00F3306C /* ECFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFilterViewController.h; sourceTree = "<group>"; };
 		3A556FA1183EC82E00F3306C /* ECFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFilterViewController.m; sourceTree = "<group>"; };
 		3A8FC003183B21F700A3770B /* ECMasterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMasterViewCell.h; sourceTree = "<group>"; };
@@ -97,15 +95,19 @@
 		3ADE0CBE182D8E01006C5424 /* ExtraCreditsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtraCreditsTests.m; sourceTree = "<group>"; };
 		86182C71183ABF8B00245C21 /* ECCourseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCourseLoader.h; sourceTree = "<group>"; };
 		86182C72183ABF8B00245C21 /* ECCourseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCourseLoader.m; sourceTree = "<group>"; };
-		866AF732183C3E1300132562 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
-		866AF733183C3E1300132562 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
-		866AF735183C3E1400132562 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
-		866AF736183C3E1400132562 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
-		866AF73B183C3E1400132562 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		866AF73C183C3E1400132562 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		868C4CA2184E8DE200073A59 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		868C4CA3184E8DE200073A59 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		868C4CA6184EA46E00073A59 /* ECFilterCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFilterCellView.h; sourceTree = "<group>"; };
+		868C4CA7184EA46E00073A59 /* ECFilterCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFilterCellView.m; sourceTree = "<group>"; };
 		86BD6BBE1836CD97007856EB /* CourseSeed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CourseSeed.plist; sourceTree = "<group>"; };
-		86C85ABD183EE1EE007CBBC4 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		86C85ABE183EE1EE007CBBC4 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		86C8697A1845524400149603 /* LoadedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadedData.h; sourceTree = "<group>"; };
+		86C8697B1845524400149603 /* LoadedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadedData.m; sourceTree = "<group>"; };
+		86C869801845524500149603 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		86C869811845524500149603 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		86C869831845524500149603 /* CourseTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTag.h; sourceTree = "<group>"; };
+		86C869841845524500149603 /* CourseTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTag.m; sourceTree = "<group>"; };
+		F78642001850F30700B08366 /* ECNavPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNavPopoverViewController.h; sourceTree = "<group>"; };
+		F78642011850F30700B08366 /* ECNavPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNavPopoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,31 +170,17 @@
 		3ADE0C8F182D8E01006C5424 /* ExtraCredits */ = {
 			isa = PBXGroup;
 			children = (
-				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
-				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
-				07644DC8183C230600AE4875 /* ECChartViewController.h */,
-				07644DC9183C230600AE4875 /* ECChartViewController.m */,
+				F78641FF1850F2A800B08366 /* iPadOnly */,
+				86C8697718454CF300149603 /* TabControllers */,
 				3ADE0C98182D8E01006C5424 /* ECAppDelegate.h */,
 				3ADE0C99182D8E01006C5424 /* ECAppDelegate.m */,
-				07644DB5183C1AD900AE4875 /* XYPieChart.h */,
-				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
-				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
-				073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */,
-				073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */,
 				86182C71183ABF8B00245C21 /* ECCourseLoader.h */,
-				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
-				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
-				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
-				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
-				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
-				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
-				073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */,
-				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
-				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
+				86182C72183ABF8B00245C21 /* ECCourseLoader.m */,
 				3ADE0C9E182D8E01006C5424 /* Main_iPad.storyboard */,
 				3ADE0C9B182D8E01006C5424 /* Main_iPhone.storyboard */,
 				86182C8C183AC46700245C21 /* Models */,
 				3ADE0C90182D8E01006C5424 /* Supporting Files */,
+				3ADE0CAA182D8E01006C5424 /* Images.xcassets */,
 			);
 			path = ExtraCredits;
 			sourceTree = "<group>";
@@ -200,10 +188,8 @@
 		3ADE0C90182D8E01006C5424 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
-				07644DC1183C1D1500AE4875 /* README.textile */,
+				86C8697918454DB400149603 /* XYPIeChart */,
 				07644DC2183C1D1500AE4875 /* LICENSE.txt */,
-				07644DC3183C1D1500AE4875 /* gitignore.html */,
 				86BD6BBE1836CD97007856EB /* CourseSeed.plist */,
 				3ADE0C91182D8E01006C5424 /* ExtraCredits-Info.plist */,
 				3ADE0C92182D8E01006C5424 /* InfoPlist.strings */,
@@ -235,16 +221,74 @@
 			isa = PBXGroup;
 			children = (
 				3ADE0CA1182D8E01006C5424 /* ExtraCredits.xcdatamodeld */,
-				86C85ABD183EE1EE007CBBC4 /* Course.h */,
-				86C85ABE183EE1EE007CBBC4 /* Course.m */,
-				866AF73B183C3E1400132562 /* Subject.h */,
-				866AF73C183C3E1400132562 /* Subject.m */,
-				866AF735183C3E1400132562 /* CourseTag.h */,
-				866AF736183C3E1400132562 /* CourseTag.m */,
-				866AF732183C3E1300132562 /* LoadedData.h */,
-				866AF733183C3E1300132562 /* LoadedData.m */,
+				868C4CA2184E8DE200073A59 /* Course.h */,
+				868C4CA3184E8DE200073A59 /* Course.m */,
+				86C869831845524500149603 /* CourseTag.h */,
+				86C869841845524500149603 /* CourseTag.m */,
+				86C869801845524500149603 /* Subject.h */,
+				86C869811845524500149603 /* Subject.m */,
+				86C8697A1845524400149603 /* LoadedData.h */,
+				86C8697B1845524400149603 /* LoadedData.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		868C4CA5184EA44300073A59 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				868C4CA6184EA46E00073A59 /* ECFilterCellView.h */,
+				868C4CA7184EA46E00073A59 /* ECFilterCellView.m */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		86C8697718454CF300149603 /* TabControllers */ = {
+			isa = PBXGroup;
+			children = (
+				07644DC8183C230600AE4875 /* ECChartViewController.h */,
+				07644DC9183C230600AE4875 /* ECChartViewController.m */,
+				073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */,
+				073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */,
+				3ADE0CA7182D8E01006C5424 /* ECDetailViewController.h */,
+				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
+				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
+				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
+				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
+				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
+				3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */,
+				3A09493E18497D4800FBE93C /* ECCoursesTakenViewController.m */,
+				868C4CA5184EA44300073A59 /* Filter */,
+				86C8697818454D4800149603 /* Master */,
+			);
+			name = TabControllers;
+			sourceTree = "<group>";
+		};
+		86C8697818454D4800149603 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				3A8FC003183B21F700A3770B /* ECMasterViewCell.h */,
+				3A8FC004183B21F700A3770B /* ECMasterViewCell.m */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		86C8697918454DB400149603 /* XYPIeChart */ = {
+			isa = PBXGroup;
+			children = (
+				07644DC0183C1D1500AE4875 /* XYPieChart.podspec */,
+				07644DB5183C1AD900AE4875 /* XYPieChart.h */,
+				07644DB6183C1B7E00AE4875 /* XYPieChart.m */,
+			);
+			name = XYPIeChart;
+			sourceTree = "<group>";
+		};
+		F78641FF1850F2A800B08366 /* iPadOnly */ = {
+			isa = PBXGroup;
+			children = (
+				F78642001850F30700B08366 /* ECNavPopoverViewController.h */,
+				F78642011850F30700B08366 /* ECNavPopoverViewController.m */,
+			);
+			name = iPadOnly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +377,6 @@
 				3ADE0C9D182D8E01006C5424 /* Main_iPhone.storyboard in Resources */,
 				07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */,
 				3ADE0C94182D8E01006C5424 /* InfoPlist.strings in Resources */,
-				07644DC5183C1D1500AE4875 /* README.textile in Resources */,
-				07644DC7183C1D1500AE4875 /* gitignore.html in Resources */,
 				07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,19 +399,21 @@
 				07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */,
 				86182C73183ABF8B00245C21 /* ECCourseLoader.m in Sources */,
 				3ADE0C9A182D8E01006C5424 /* ECAppDelegate.m in Sources */,
-				866AF734183C3E1300132562 /* LoadedData.m in Sources */,
-				86C85ABF183EE1EE007CBBC4 /* Course.m in Sources */,
+				3A09493F18497D4800FBE93C /* ECCoursesTakenViewController.m in Sources */,
+				86C869851845524500149603 /* CourseTag.m in Sources */,
 				3ADE0C96182D8E01006C5424 /* main.m in Sources */,
+				86C869821845524500149603 /* Subject.m in Sources */,
 				3ADE0CA6182D8E01006C5424 /* ECMasterViewController.m in Sources */,
+				868C4CA8184EA46E00073A59 /* ECFilterCellView.m in Sources */,
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
 				3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */,
-				073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */,
+				868C4CA4184E8DE200073A59 /* Course.m in Sources */,
+				F78642021850F30700B08366 /* ECNavPopoverViewController.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
+				86C8697C1845524400149603 /* LoadedData.m in Sources */,
 				07644DCA183C230600AE4875 /* ECChartViewController.m in Sources */,
-				866AF73D183C3E1400132562 /* Subject.m in Sources */,
 				3ADE0CA9182D8E01006C5424 /* ECDetailViewController.m in Sources */,
 				3A8FC005183B21F700A3770B /* ECMasterViewCell.m in Sources */,
-				866AF737183C3E1400132562 /* CourseTag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

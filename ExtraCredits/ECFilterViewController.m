@@ -8,6 +8,8 @@
 
 #import "ECFilterViewController.h"
 #import "ECMasterViewController.h"
+#import "ECFilterCellView.h"
+#import "Course.h"
 
 @interface ECFilterViewController ()
 
@@ -28,6 +30,29 @@
 {
     [super viewDidLoad];
 
+    // Setup predicate logic for each filter
+    self.filterPredicates = @{
+        @"Systems Track Required":
+        ^{
+            return [NSPredicate predicateWithFormat:@"ANY tags.tag = %@", @"systems-core"];
+        },
+        @"Management Track Required":
+        ^{
+
+            return [NSPredicate predicateWithFormat:@"ANY tags.tag = %@", @"management-core"];
+        },
+        @"Completed Courses":
+        ^{
+            return [NSPredicate predicateWithFormat:@"status = %@", COURSE_HAVE_TAKEN];
+        },
+        @"Incomplete Courses":
+        ^{
+            return [NSPredicate predicateWithFormat:@"status = %@ OR status = %@", COURSE_NOT_TAKEN, COURSE_WILL_TAKE];
+        },
+    };
+
+    self.filterNames = [self.filterPredicates allKeys];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -43,30 +68,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
 - (IBAction)cancel:(id)sender
 {
     [self.delegate filterViewControllerDidCancel:self];
@@ -78,61 +79,35 @@
     [self.delegate filterViewControllerDidSave:self];
 }
 
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+    return self.filterNames.count;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    ECFilterCellView *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.filterName.text = self.filterNames[indexPath.row];
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return cell;
 }
 
- */
+// Construct the predicate from the current filter status
+-(NSPredicate *)constructPredicate
+{
+    NSMutableArray *predicates = [NSMutableArray new];
+
+    for (NSInteger i = 0; i < [self.tableView numberOfRowsInSection:0]; ++i)
+    {
+        ECFilterCellView *cell = (ECFilterCellView *) [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+
+        if (cell.statusSwitch.on)
+        {
+            [predicates addObject:((id(^)()) self.filterPredicates[cell.filterName.text])()];
+        }
+    }
+
+    return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+}
 
 @end

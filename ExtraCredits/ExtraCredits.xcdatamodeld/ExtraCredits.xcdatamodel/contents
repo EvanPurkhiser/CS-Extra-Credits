@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="credits" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="alternatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="alternatives" inverseEntity="Course" syncable="YES"/>
         <relationship name="prerequisites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="prerequisites" inverseEntity="Course" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="courses" inverseEntity="Subject" syncable="YES"/>
@@ -22,9 +25,9 @@
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="subject" inverseEntity="Course" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-189" positionY="-240" width="128" height="150"/>
-        <element name="CourseTag" positionX="-18" positionY="42" width="128" height="75"/>
-        <element name="LoadedData" positionX="63" positionY="-117" width="128" height="60"/>
-        <element name="Subject" positionX="-272" positionY="99" width="128" height="90"/>
+        <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CourseTag" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LoadedData" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Subject" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

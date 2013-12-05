@@ -20,6 +20,9 @@
 @end
 
 @implementation ECMasterViewController
+{
+    NSPredicate *_predicate;
+}
 
 - (void)awakeFromNib
 {
@@ -165,6 +168,7 @@
     NSArray *sortDescriptors = @[sortSubject, sortNumber];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
+    [fetchRequest setPredicate:_predicate];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -247,7 +251,7 @@
 {
     Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSString *cid = [NSString stringWithFormat:@"%@:%@", course.subject.number, course.number];
+    NSString *cid = [NSString stringWithFormat:@"%@:%@ (%@ credits)", course.subject.number, course.number, course.credits];
     NSMutableAttributedString *courseID = [[NSMutableAttributedString alloc] initWithString:cid];
 
     if ([course.subject.number isEqualToString:@"3460"])
@@ -261,6 +265,14 @@
     if ([course.subject.number isEqualToString:@"3470"])
     {
         [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:70.0/255.0 green:150.0/255.0 blue:20.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
+    }
+    if ([course.subject.number isEqualToString:@"6500"])
+    {
+        [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:202.0/255.0 green:20.0/255.0 blue:222.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
+    }
+    if ([course.subject.number isEqualToString:@"4450"])
+    {
+        [courseID addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:57.0/255.0 green:168.0/255.0 blue:155.0/255.0 alpha:1.0] range:NSMakeRange(0,5)];
     }
 
     cell.courseName.text = course.name;
@@ -276,6 +288,14 @@
 - (void)filterViewControllerDidSave:(ECFilterViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    // Set the predicate from the filters and force reload the fetched results
+    _predicate = [controller constructPredicate];
+
+    [NSFetchedResultsController deleteCacheWithName:@"Master"];
+    _fetchedResultsController = nil;
+
+    [self.tableView reloadData];
 }
 
 @end

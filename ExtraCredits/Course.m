@@ -2,7 +2,7 @@
 //  Course.m
 //  ExtraCredits
 //
-//  Created by Purkhiser,Evan on 11/21/13.
+//  Created by Purkhiser,Evan on 12/3/13.
 //  Copyright (c) 2013 iOS. All rights reserved.
 //
 
@@ -14,9 +14,12 @@
 
 @implementation Course
 
+@dynamic credits;
 @dynamic details;
 @dynamic name;
 @dynamic number;
+@dynamic status;
+@dynamic year;
 @dynamic alternatives;
 @dynamic prerequisites;
 @dynamic subject;

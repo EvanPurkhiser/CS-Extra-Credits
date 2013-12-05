@@ -123,6 +123,7 @@
         // Update the course information
         courseModel.name    = course[@"name"];
         courseModel.number  = course[@"number"];
+        courseModel.credits = course[@"credits"];
         courseModel.details = course[@"description"];
         courseModel.subject = subjects[course[@"subject"]];
 
