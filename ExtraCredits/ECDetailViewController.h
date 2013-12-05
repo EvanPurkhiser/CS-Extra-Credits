@@ -27,6 +27,4 @@
 
 @property (strong, nonatomic) NSArray *semesterSelectionOptions;
 
-- (IBAction) selectedPickerRow;
-
 @end

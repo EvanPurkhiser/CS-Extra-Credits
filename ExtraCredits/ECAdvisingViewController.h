@@ -18,9 +18,6 @@
 
 @property (strong, nonatomic) NSArray *scheduleSemesterSelectionOptions;
 
-- (IBAction) selectedPickerRow;
-- (NSArray *) selectedCourses;
-
 - (IBAction)sendEmail:(id)sender;
 
 @end
