@@ -77,7 +77,7 @@
         };
 
         self.courseSelectionOptions = [[_courseStatus allKeys] sortedArrayUsingSelector:
-                                                              @selector(localizedCaseInsensitiveCompare:)];;
+                                                              @selector(localizedCaseInsensitiveCompare:)];
         self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
         self.semesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_courseSemester allKeys]];
         
