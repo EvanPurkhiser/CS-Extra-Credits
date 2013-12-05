@@ -126,7 +126,7 @@
     // Notify if no courses to email
     if ([courses count] == 0)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Nope!" message:@"No courses marked to be taken for the specified year / semester" delegate:self cancelButtonTitle:@"Oh, ok" otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Nope!" message:@"No courses marked to be taken for the specified year / semester" delegate:self cancelButtonTitle:@"Oh, OK" otherButtonTitles: nil] show];
 
         return;
     }
