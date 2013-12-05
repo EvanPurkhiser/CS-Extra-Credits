@@ -141,7 +141,7 @@
         [messages appendFormat:@" * %@\n", course.name];
     }
 
-    NSString *message = [NSString stringWithFormat:@"Dr. %@,\n\nHere's a list of courses I was looking at taking:\n\n%@\n What do you think?\n\nThanks,", advisor, messages];
+    NSString *message = [NSString stringWithFormat:@"Dr. %@,\n\nHere's a list of courses I was looking at taking:\n\n%@\n What do you think?\n\nThanks,\n\nSend from ExtraCredits", advisor, messages];
 
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@",
                                                 [email stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
