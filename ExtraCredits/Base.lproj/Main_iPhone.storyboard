@@ -52,17 +52,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-rh-cGD" customClass="XYPieChart">
-                                <rect key="frame" x="20" y="113" width="280" height="284"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-rh-cGD" customClass="XYPieChart">
+                                <rect key="frame" x="20" y="130" width="280" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-Yw-Ylx">
+                                <rect key="frame" x="31" y="94" width="259" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Systems Track"/>
+                                    <segment title="Management Track"/>
+                                </segments>
+                                <connections>
+                                    <action selector="trackChange:" destination="Bqm-ZZ-OUw" eventType="valueChanged" id="T2M-82-RTo"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="t2O-Yw-Ylx" secondAttribute="centerX" id="4oL-MG-OM1"/>
+                            <constraint firstItem="Bpf-Zd-qOW" firstAttribute="top" secondItem="YLd-rh-cGD" secondAttribute="bottom" constant="105" id="9OJ-pL-uHd"/>
+                            <constraint firstAttribute="centerX" secondItem="YLd-rh-cGD" secondAttribute="centerX" id="GsC-6A-3cU"/>
+                            <constraint firstItem="YLd-rh-cGD" firstAttribute="leading" secondItem="UQs-04-aac" secondAttribute="leading" constant="20" id="Saq-Cp-Xuz"/>
+                            <constraint firstItem="t2O-Yw-Ylx" firstAttribute="top" secondItem="aep-0v-tJp" secondAttribute="bottom" constant="30" id="VQh-zs-Gns"/>
+                            <constraint firstAttribute="trailing" secondItem="YLd-rh-cGD" secondAttribute="trailing" constant="20" id="VhB-ZP-VYc"/>
+                            <constraint firstItem="YLd-rh-cGD" firstAttribute="top" secondItem="t2O-Yw-Ylx" secondAttribute="bottom" constant="8" id="Z3w-mM-9k9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Progress" id="F8w-Ow-6UZ"/>
                     <connections>
                         <outlet property="pieChart" destination="YLd-rh-cGD" id="lyM-1a-FcV"/>
+                        <outlet property="track" destination="t2O-Yw-Ylx" id="M9y-nw-pDh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-nE-bki" userLabel="First Responder" sceneMemberID="firstResponder"/>

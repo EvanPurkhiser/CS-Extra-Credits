@@ -7,6 +7,8 @@
 //
 
 #import "ECChartViewController.h"
+#import "ECAppDelegate.h"
+#import "Course.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation ECChartViewController
@@ -32,6 +34,39 @@
 {
     [super viewDidLoad];
     
+    [self loadChart];
+}
+
+- (void)loadChart
+{
+    NSManagedObjectContext *context = ((ECAppDelegate *) [[UIApplication sharedApplication] delegate]).managedObjectContext;
+
+    NSFetchRequest *courseRequest = [NSFetchRequest new];
+    courseRequest.entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
+
+    NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
+    NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
+    courseRequest.sortDescriptors = @[sortSubject, sortNumber];
+
+    // First item is systems track
+    if (self.track.selectedSegmentIndex == 0)
+    {
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
+    }
+
+    // Second item is management track
+    else
+    {
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
+    }
+
+    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
+
+    NSLog(@"%lu", (unsigned long)[courses count]);
+
+
+
+
     // Set slices to an array of size 10
     self.slices = [NSMutableArray arrayWithCapacity:10];
     
@@ -173,6 +208,13 @@
 {
     NSLog(@"did select slice at index %lu",(unsigned long)index);
     self.selectedSliceLabel.text = [NSString stringWithFormat:@"$%@",[self.slices objectAtIndex:index]];
+}
+
+- (IBAction)trackChange:(id)sender
+{
+    [self loadChart];
+
+    NSLog(@"testing");
 }
 
 @end

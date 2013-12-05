@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#define SUBJECT_COLORS @[[UIColor blueColor], \
+                         [UIColor redColor],  \
+                         [UIColor colorWithRed:70.0/255.0 green:150.0/255.0 blue:20.0/255.0 alpha:1.0],  \
+                         [UIColor colorWithRed:202.0/255.0 green:20.0/255.0 blue:222.0/255.0 alpha:1.0], \
+                         [UIColor colorWithRed:57.0/255.0 green:168.0/255.0 blue:155.0/255.0 alpha:1.0], \
+]
+
 @class Course;
 
 @interface Subject : NSManagedObject

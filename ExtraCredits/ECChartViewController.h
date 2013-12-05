@@ -20,4 +20,9 @@
 @property(nonatomic, strong) NSMutableArray *slices;
 @property(nonatomic, strong) NSArray *sliceColors;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *track;
+- (IBAction)trackChange:(id)sender;
+
+- (void)loadChart;
+
 @end
