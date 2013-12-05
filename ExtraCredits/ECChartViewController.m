@@ -39,34 +39,6 @@
 
 - (void)loadChart
 {
-    NSManagedObjectContext *context = ((ECAppDelegate *) [[UIApplication sharedApplication] delegate]).managedObjectContext;
-
-    NSFetchRequest *courseRequest = [NSFetchRequest new];
-    courseRequest.entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
-
-    NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
-    NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
-    courseRequest.sortDescriptors = @[sortSubject, sortNumber];
-
-    // First item is systems track
-    if (self.track.selectedSegmentIndex == 0)
-    {
-        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
-    }
-
-    // Second item is management track
-    else
-    {
-        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
-    }
-
-    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
-
-    NSLog(@"%lu", (unsigned long)[courses count]);
-
-
-
-
     // Set slices to an array of size 10
     self.slices = [NSMutableArray arrayWithCapacity:10];
     
@@ -93,19 +65,54 @@
                        [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
                        [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
                        [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
+}
+
+- (void)loadSlices
+{
+    NSManagedObjectContext *context = ((ECAppDelegate *) [[UIApplication sharedApplication] delegate]).managedObjectContext;
     
-    // Add 5 slices of random value
-    for (int i = 0; i < 5; i++)
+    NSFetchRequest *courseRequest = [NSFetchRequest new];
+    courseRequest.entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
+    
+    NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
+    NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
+    courseRequest.sortDescriptors = @[sortSubject, sortNumber];
+    
+    // First item is systems track
+    if (self.track.selectedSegmentIndex == 0)
     {
-        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
-        [_slices addObject:one];
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
+        
+        // Add 5 slices of random value
+        for (int i = 0; i < 5; i++)
+        {
+            NSNumber *one = [NSNumber numberWithInt:50];
+            [_slices addObject:one];
+        }
     }
+    
+    // Second item is management track
+    else
+    {
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
+        
+        // Add 2 slices of random value
+        for (int i = 0; i < 2; i++)
+        {
+            NSNumber *one = [NSNumber numberWithInt:50];
+            [_slices addObject:one];
+        }
+    }
+    
+    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
+    
+    NSLog(@"%lu", (unsigned long)[courses count]);
     
     // Reload data
     [self.pieChart reloadData];
 }
 
-- (void)viewDidUnload
+- (void)clearChart
 {
     // Release pie chart properties (set nil)
     [self setPieChart:nil];
@@ -114,6 +121,17 @@
     [self setIndexOfSlices:nil];
     [self setNumOfSlices:nil];
     [self setDownArrow:nil];
+}
+
+-(void) clearSlices
+{
+    // Remove all slices
+    [_slices removeAllObjects];
+}
+
+- (void)viewDidUnload
+{
+    [self clearChart];
     
     [super viewDidUnload];
 }
@@ -121,6 +139,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self loadSlices];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -130,17 +150,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    // Remove all slices
-    [_slices removeAllObjects];
+	// Remove all slices
+    [self clearSlices];
     
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    // Reload data
-    [self.pieChart reloadData];
-    
 	[super viewDidDisappear:animated];
 }
 
@@ -153,11 +170,6 @@
 - (IBAction)SliceNumChanged:(id)sender
 {
     
-}
-
-- (IBAction)clearSlices {
-    [_slices removeAllObjects];
-    [self.pieChart reloadData];
 }
 
 - (IBAction)addSliceBtnClicked:(id)sender
@@ -212,7 +224,9 @@
 
 - (IBAction)trackChange:(id)sender
 {
-    [self loadChart];
+    //[self unloadChart];
+    [self clearSlices];
+    [self loadSlices];
 
     NSLog(@"testing");
     NSLog(@"Selected Index:%ld", (long)self.track.selectedSegmentIndex);
