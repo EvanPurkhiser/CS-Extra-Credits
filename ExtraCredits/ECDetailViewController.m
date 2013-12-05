@@ -18,7 +18,7 @@
 @implementation ECDetailViewController
 {
     NSDictionary *_courseStatus;
-    NSDictionary *_courseSemster;
+    NSDictionary *_courseSemester;
 }
 
 #pragma mark - Managing the detail item
@@ -70,7 +70,7 @@
             @"Won't":   COURSE_WONT_TAKE,
         };
 
-        _courseSemster = @{
+        _courseSemester = @{
             @"Spring": COURSE_SPRING,
             @"Summer": COURSE_SUMMER,
             @"Fall":   COURSE_FALL,
@@ -79,7 +79,7 @@
         self.courseSelectionOptions = [[_courseStatus allKeys] sortedArrayUsingSelector:
                                                               @selector(localizedCaseInsensitiveCompare:)];;
         self.yearSelectionOptions = @[@"-", @"2011", @"2012", @"2013", @"2014", @"2015", @"2016", @"2017", @"2018"];
-        self.semesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_courseSemster allKeys]];
+        self.semesterSelectionOptions = [@[@"-"] arrayByAddingObjectsFromArray:[_courseSemester allKeys]];
         
         self.courseSelection.delegate = self;
         self.courseSelection.dataSource = self;
@@ -104,7 +104,7 @@
         }
         else
         {
-            NSInteger semesterRow = [self.semesterSelectionOptions indexOfObject:[_courseSemster allKeysForObject:self.detailItem.semester][0]];
+            NSInteger semesterRow = [self.semesterSelectionOptions indexOfObject:[_courseSemester allKeysForObject:self.detailItem.semester][0]];
             [self.courseSelection selectRow:semesterRow inComponent:2 animated:NO];
         }
     }
