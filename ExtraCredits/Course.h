@@ -14,6 +14,10 @@
 #define COURSE_WILL_TAKE  @2
 #define COURSE_WONT_TAKE  @3
 
+#define COURSE_SPRING @1
+#define COURSE_FALL   @2
+#define COURSE_SUMMER @3
+
 @class Course, CourseTag, Subject;
 
 @interface Course : NSManagedObject
@@ -22,6 +26,7 @@
 @property (nonatomic, retain) NSString * details;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * number;
+@property (nonatomic, retain) NSNumber * semester;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSNumber * year;
 @property (nonatomic, retain) NSSet *alternatives;

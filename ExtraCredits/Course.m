@@ -17,6 +17,7 @@
 @dynamic credits;
 @dynamic details;
 @dynamic name;
+@dynamic semester;
 @dynamic number;
 @dynamic status;
 @dynamic year;
