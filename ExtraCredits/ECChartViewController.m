@@ -30,13 +30,6 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self loadChart];
-}
-
 - (void)loadChart
 {
     // Set slices to an array of size 10
@@ -67,6 +60,17 @@
                        [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
 }
 
+- (void)clearChart
+{
+    // Release pie chart properties (set nil)
+    [self setPieChart:nil];
+    [self setPercentageLabel:nil];
+    [self setSelectedSliceLabel:nil];
+    [self setIndexOfSlices:nil];
+    [self setNumOfSlices:nil];
+    [self setDownArrow:nil];
+}
+
 - (void)loadSlices
 {
     NSManagedObjectContext *context = ((ECAppDelegate *) [[UIApplication sharedApplication] delegate]).managedObjectContext;
@@ -83,7 +87,7 @@
     {
         courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
         
-        // Add 5 slices of random value
+        // Add 5 slices (value=50)
         for (int i = 0; i < 5; i++)
         {
             NSNumber *one = [NSNumber numberWithInt:50];
@@ -96,7 +100,7 @@
     {
         courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
         
-        // Add 2 slices of random value
+        // Add 2 slices (value=50)
         for (int i = 0; i < 2; i++)
         {
             NSNumber *one = [NSNumber numberWithInt:50];
@@ -112,25 +116,23 @@
     [self.pieChart reloadData];
 }
 
-- (void)clearChart
-{
-    // Release pie chart properties (set nil)
-    [self setPieChart:nil];
-    [self setPercentageLabel:nil];
-    [self setSelectedSliceLabel:nil];
-    [self setIndexOfSlices:nil];
-    [self setNumOfSlices:nil];
-    [self setDownArrow:nil];
-}
-
 -(void) clearSlices
 {
     // Remove all slices
     [_slices removeAllObjects];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Load chart
+    [self loadChart];
+}
+
 - (void)viewDidUnload
 {
+    // Clear chart
     [self clearChart];
     
     [super viewDidUnload];
@@ -140,20 +142,21 @@
 {
     [super viewWillAppear:animated];
     
+    // Load slices
     [self loadSlices];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	// Clear slices
+    [self clearSlices];
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	// Remove all slices
-    [self clearSlices];
-    
-    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -167,21 +170,10 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (IBAction)SliceNumChanged:(id)sender
-{
-    
-}
 
-- (IBAction)addSliceBtnClicked:(id)sender
-{
-
-}
-
-- (IBAction)updateSlices
-{
-    [self.pieChart reloadData];
-}
-
+/*
+ Currently not implemented, may be useful in the future.
+ */
 - (IBAction)showSlicePercentage:(id)sender {
     UISwitch *perSwitch = (UISwitch *)sender;
     [self.pieChart setShowPercentage:perSwitch.isOn];
@@ -208,14 +200,17 @@
 {
     NSLog(@"will select slice at index %lu",(unsigned long)index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart willDeselectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"will deselect slice at index %lu",(unsigned long)index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"did deselect slice at index %lu",(unsigned long)index);
 }
+
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"did select slice at index %lu",(unsigned long)index);
@@ -224,11 +219,12 @@
 
 - (IBAction)trackChange:(id)sender
 {
-    //[self unloadChart];
+    // Clear slices
     [self clearSlices];
+    
+    // Load slices
     [self loadSlices];
 
-    NSLog(@"testing");
     NSLog(@"Selected Index:%ld", (long)self.track.selectedSegmentIndex);
 }
 
