@@ -27,4 +27,6 @@
 
 @property (strong, nonatomic) NSArray *semesterSelectionOptions;
 
+- (IBAction)saveiPadDetail:(id)sender;
+
 @end
