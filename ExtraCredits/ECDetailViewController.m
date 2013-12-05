@@ -166,11 +166,13 @@
         self.courseDescriptionView.hidden = YES;
         self.courseNameLabel.hidden = YES;
         self.courseSelection.hidden = YES;
+        self.saveButton.enabled = NO;
     }
     else {
         self.courseDescriptionView.hidden = NO;
         self.courseNameLabel.hidden = NO;
         self.courseSelection.hidden = NO;
+        self.saveButton.enabled = YES;
     }
 }
 

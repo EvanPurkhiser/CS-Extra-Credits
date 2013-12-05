@@ -19,6 +19,8 @@
 
 @property (strong, nonatomic) IBOutlet UIPickerView *courseSelection;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+
 @property (strong, nonatomic) NSArray *courseSelectionOptions;
 
 @property (strong, nonatomic) NSArray *yearSelectionOptions;

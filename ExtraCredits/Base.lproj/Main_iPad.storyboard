@@ -71,6 +71,7 @@
                         <outlet property="courseDescriptionView" destination="yCt-c2-vrs" id="sae-o1-CG7"/>
                         <outlet property="courseNameLabel" destination="mdw-Zy-8nv" id="MTk-Id-5NA"/>
                         <outlet property="courseSelection" destination="XiX-KK-3Lt" id="dPy-nS-nxa"/>
+                        <outlet property="saveButton" destination="F34-UQ-bAB" id="aNE-ul-Qos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
