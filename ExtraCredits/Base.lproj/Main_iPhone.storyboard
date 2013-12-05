@@ -34,7 +34,6 @@
                         <segue destination="rS3-R9-Ivy" kind="relationship" relationship="viewControllers" id="rIw-n1-u2O"/>
                         <segue destination="Rmr-Jh-5zB" kind="relationship" relationship="viewControllers" id="kQX-RZ-ZgD"/>
                         <segue destination="nlh-Sh-4un" kind="relationship" relationship="viewControllers" id="1OQ-My-GsE"/>
-                        <segue destination="euC-69-vvJ" kind="relationship" relationship="viewControllers" id="0Sj-kx-2BR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CD9-uA-hDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,102 +318,8 @@
             </objects>
             <point key="canvasLocation" x="105" y="759"/>
         </scene>
-        <!--Navigation Controller - Settings-->
-        <scene sceneID="H5K-xU-VyV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="euC-69-vvJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="cog" id="80m-NT-8OZ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NMV-o2-Yop">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J9g-YI-iuK" kind="relationship" relationship="rootViewController" id="NCM-ZC-zgB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ovv-5h-r1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="99" y="1426"/>
-        </scene>
-        <!--Settings View Controller - Settings-->
-        <scene sceneID="Pwg-lE-Mi0">
-            <objects>
-                <tableViewController id="J9g-YI-iuK" customClass="ECSettingsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uNB-c6-nxK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Setup" id="WX7-oA-hcK">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="K2f-E5-pFp" style="IBUITableViewCellStyleDefault" id="ehN-WO-6JG">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehN-WO-6JG" id="5Zn-OP-6yX">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Courses Taken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K2f-E5-pFp">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="73j-cg-Fa5" kind="push" id="tQU-xx-Wgg"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="J9g-YI-iuK" id="Vtu-Pf-OsJ"/>
-                            <outlet property="delegate" destination="J9g-YI-iuK" id="igB-BJ-Fy5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="AEX-u8-cmx"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8sB-kF-ITE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="587" y="1426"/>
-        </scene>
-        <!--Courses Taken View Controller - Courses Taken-->
-        <scene sceneID="mD3-qh-c67">
-            <objects>
-                <tableViewController id="73j-cg-Fa5" customClass="ECCoursesTakenViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u3F-Un-Gbe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="luT-Dj-TPC">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="luT-Dj-TPC" id="NzH-2J-Amz">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="73j-cg-Fa5" id="Vqj-tE-OCY"/>
-                            <outlet property="delegate" destination="73j-cg-Fa5" id="0rJ-Pk-fYI"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Courses Taken" id="26r-cd-VfJ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nfy-3S-MKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1008" y="1426"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="cog" width="32" height="32"/>
         <image name="following" width="32" height="32"/>
         <image name="list" width="32" height="32"/>
         <image name="pie_chart" width="32" height="32"/>

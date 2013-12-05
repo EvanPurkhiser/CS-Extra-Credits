@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */; };
-		073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */; };
 		07644DB7183C1B7E00AE4875 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 07644DB6183C1B7E00AE4875 /* XYPieChart.m */; };
 		07644DC4183C1D1500AE4875 /* XYPieChart.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC0183C1D1500AE4875 /* XYPieChart.podspec */; };
 		07644DC6183C1D1500AE4875 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07644DC2183C1D1500AE4875 /* LICENSE.txt */; };
@@ -57,8 +56,6 @@
 /* Begin PBXFileReference section */
 		073D65E9183ECD4600258DF6 /* ECAdvisingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAdvisingViewController.h; sourceTree = "<group>"; };
 		073D65EA183ECD4600258DF6 /* ECAdvisingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAdvisingViewController.m; sourceTree = "<group>"; };
-		073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettingsViewController.h; sourceTree = "<group>"; };
-		073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettingsViewController.m; sourceTree = "<group>"; };
 		07644DB5183C1AD900AE4875 /* XYPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
 		07644DB6183C1B7E00AE4875 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
 		07644DC0183C1D1500AE4875 /* XYPieChart.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYPieChart.podspec; sourceTree = "<group>"; };
@@ -252,8 +249,6 @@
 				3ADE0CA8182D8E01006C5424 /* ECDetailViewController.m */,
 				3ADE0CA4182D8E01006C5424 /* ECMasterViewController.h */,
 				3ADE0CA5182D8E01006C5424 /* ECMasterViewController.m */,
-				073D65EC183ECDA500258DF6 /* ECSettingsViewController.h */,
-				073D65ED183ECDA500258DF6 /* ECSettingsViewController.m */,
 				3A556FA0183EC82E00F3306C /* ECFilterViewController.h */,
 				3A556FA1183EC82E00F3306C /* ECFilterViewController.m */,
 				3A09493D18497D4800FBE93C /* ECCoursesTakenViewController.h */,
@@ -399,7 +394,6 @@
 				868C4CA8184EA46E00073A59 /* ECFilterCellView.m in Sources */,
 				073D65EB183ECD4600258DF6 /* ECAdvisingViewController.m in Sources */,
 				3A556FA2183EC82E00F3306C /* ECFilterViewController.m in Sources */,
-				073D65EE183ECDA500258DF6 /* ECSettingsViewController.m in Sources */,
 				868C4CA4184E8DE200073A59 /* Course.m in Sources */,
 				3ADE0CA3182D8E01006C5424 /* ExtraCredits.xcdatamodeld in Sources */,
 				86C8697C1845524400149603 /* LoadedData.m in Sources */,
