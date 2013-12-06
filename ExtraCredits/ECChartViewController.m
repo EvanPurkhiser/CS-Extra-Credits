@@ -82,98 +82,90 @@
     if (self.track.selectedSegmentIndex == 0)
     {
         courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
-        
-        // Store last subject (initialize with empty string)
-        NSString *lastSubject = @"";
-
-        // Store last status (initialize with 4)
-        NSNumber *lastStatus = [NSNumber numberWithInt:4];
-        
-        // Store current slice index (for color and incrementing)
-        NSInteger sliceIndex = -1;
-        
-        // Add slices based on subject and status
-        for (int i = 0; i < [courses count]; i++)
-        {
-            
-            // Retrieve course
-            Course *course = [courses objectAtIndex:i];
-            
-            // Check to see if a new slice should be created
-            if (![course.subject.number isEqual:lastSubject] || ![course.status isEqual:lastStatus]) {
-                
-                // Set lastSubject
-                lastSubject = course.subject.number;
-                
-                // Set lastStatus
-                lastStatus = course.status;
-                
-                // Create new slice
-                NSNumber *slice = [NSNumber numberWithInt:1];
-                
-                // Set color of slice
-                if ([course.status  isEqual: COURSE_HAVE_TAKEN]) {
-                    
-                    // Dark color
-                    UIColor *color = course.subject.color;
-                    
-                    // Add color to array
-                    [_sliceColors addObject:color];
-                }
-                else {
-                    
-                    // Light color (alpha 0.50)
-                    UIColor *color = [course.subject.color colorWithAlphaComponent:0.75];
-                    
-                    // Add color to array
-                    [_sliceColors addObject:color];
-                }
-                
-                // Add slice
-                [_slices addObject:slice];
-                
-                // Add slice label
-                NSString *labelStatus;
-                
-                if ([course.status isEqual:COURSE_HAVE_TAKEN]) {
-                    labelStatus = @" (Taken)";
-                }
-                else {
-                    labelStatus = @" (Not Taken)";
-                }
-                
-                [_sliceLabels addObject:[course.subject.name stringByAppendingString:labelStatus]];
-                
-                // Increment sliceIndex
-                ++sliceIndex;
-            }
-            
-            // Otherwise...
-            else {
-                
-                // Add number to current slice
-                int count = [[_slices objectAtIndex:sliceIndex] intValue] + 1;
-                NSNumber* countObject = [NSNumber numberWithInt:count];
-                [_slices replaceObjectAtIndex:sliceIndex withObject:countObject];
-            }
-        }
     }
-    
     // Second item is management track
     else
     {
         courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
-        
-        // Add 2 slices (value=50)
-        for (int i = 0; i < 2; i++)
-        {
-            NSNumber *one = [NSNumber numberWithInt:50];
-            [_slices addObject:one];
-        }
     }
     
-    NSLog(@"%lu", (unsigned long)[courses count]);
+    // Store last subject (initialize with empty string)
+    NSString *lastSubject = @"";
     
+    // Store last status (initialize with 4)
+    NSNumber *lastStatus = [NSNumber numberWithInt:4];
+    
+    // Store current slice index (for incrementing)
+    NSInteger sliceIndex = -1;
+    
+    // Add slices based on subject and status
+    for (int i = 0; i < [courses count]; i++)
+    {
+        
+        // Retrieve course
+        Course *course = [courses objectAtIndex:i];
+        
+        // Check to see if a new slice should be created
+        if (![course.subject.number isEqual:lastSubject] || ![course.status isEqual:lastStatus]) {
+            
+            // Set lastSubject
+            lastSubject = course.subject.number;
+            
+            // Set lastStatus
+            lastStatus = course.status;
+            
+            // Create new slice
+            NSNumber *slice = [NSNumber numberWithInt:1];
+            
+            // Set color of slice
+            if ([course.status  isEqual: COURSE_HAVE_TAKEN]) {
+                
+                // Dark color
+                UIColor *color = course.subject.color;
+                
+                // Add color to array
+                [_sliceColors addObject:color];
+            }
+            else {
+                
+                // Light color (alpha 0.75)
+                UIColor *color = [course.subject.color colorWithAlphaComponent:0.75];
+                
+                // Add color to array
+                [_sliceColors addObject:color];
+            }
+            
+            // Add slice
+            [_slices addObject:slice];
+            
+            // Add slice label
+            NSString *labelStatus;
+            
+            if ([course.status isEqual:COURSE_HAVE_TAKEN]) {
+                labelStatus = @" (Taken)";
+            }
+            else {
+                labelStatus = @" (Not Taken)";
+            }
+            
+            [_sliceLabels addObject:[course.subject.name stringByAppendingString:labelStatus]];
+            
+            // Increment sliceIndex
+            ++sliceIndex;
+        }
+        
+        // Otherwise...
+        else {
+            
+            // Add number to current slice
+            int count = [[_slices objectAtIndex:sliceIndex] intValue] + 1;
+            NSNumber* countObject = [NSNumber numberWithInt:count];
+            [_slices replaceObjectAtIndex:sliceIndex withObject:countObject];
+        }
+    }
+
+    NSLog(@"%lu", (unsigned long)[courses count]);
+
     // Reload data
     [self.pieChart reloadData];
 }
