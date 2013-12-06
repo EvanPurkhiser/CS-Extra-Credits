@@ -99,7 +99,7 @@
         NSNumber *lastStatus = [NSNumber numberWithInt:4];
         
         // Store current slice index (for color and incrementing)
-        NSInteger sliceIndex = 0;
+        NSInteger sliceIndex = -1;
         
         // Add slices based on subject and status
         for (int i = 0; i < [courses count]; i++)
@@ -143,7 +143,9 @@
             else {
                 
                 // Add number to current slice
-                // ???
+                int count = [[_slices objectAtIndex:sliceIndex] intValue] + 1;
+                NSNumber* countObject = [NSNumber numberWithInt:count];
+                [_slices replaceObjectAtIndex:sliceIndex withObject:countObject];
             }
         }
     }
