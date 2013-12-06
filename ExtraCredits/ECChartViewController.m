@@ -96,7 +96,7 @@
         NSString *lastSubject = @"";
 
         // Store last status (initialize with empty string)
-        NSNumber *lastStatus = @"";
+        NSNumber *lastStatus = [NSNumber numberWithInt:4];
         
         // Store current slice index (for color and incrementing)
         NSInteger sliceIndex = 0;
@@ -109,7 +109,7 @@
             Course *course = [courses objectAtIndex:i];
             
             // Check to see if a new slice should be created
-            if (![course.subject.number isEqual:lastSubject] || course.status != lastStatus) {
+            if (![course.subject.number isEqual:lastSubject] || ![course.status isEqual:lastStatus]) {
                 
                 // Set lastSubject
                 lastSubject = course.subject.number;
@@ -121,7 +121,16 @@
                 NSNumber *slice = [NSNumber numberWithInt:1];
                 
                 // Set color of slice
-                // ???
+                if ([course.status  isEqual: COURSE_HAVE_TAKEN]) {
+                    
+                    // Dark color
+                    // ???
+                }
+                else {
+                    
+                    // Light color
+                    // ???
+                }
                 
                 // Add slice
                 [_slices addObject:slice];
