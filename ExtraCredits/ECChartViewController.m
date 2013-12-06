@@ -131,11 +131,8 @@
                 }
                 else {
                     
-                    // Light color
-                    UIColor *color = course.subject.color;
-                    
-                    // Modify the alpha
-                    // ???
+                    // Light color (alpha 0.50)
+                    UIColor *color = [course.subject.color colorWithAlphaComponent:0.50];
                     
                     // Add color to array
                     [_sliceColors addObject:color];
