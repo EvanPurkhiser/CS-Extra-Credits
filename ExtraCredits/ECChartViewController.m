@@ -9,6 +9,7 @@
 #import "ECChartViewController.h"
 #import "ECAppDelegate.h"
 #import "Course.h"
+#import "Subject.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation ECChartViewController
@@ -78,9 +79,11 @@
     NSFetchRequest *courseRequest = [NSFetchRequest new];
     courseRequest.entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:context];
     
+    // Sort by course subject, status, number
     NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
+    NSSortDescriptor *sortStatus = [[NSSortDescriptor alloc] initWithKey:@"status" ascending:YES];
     NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
-    courseRequest.sortDescriptors = @[sortSubject, sortNumber];
+    courseRequest.sortDescriptors = @[sortSubject, sortStatus, sortNumber];
     
     NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
     
@@ -89,11 +92,50 @@
     {
         courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
         
-        // Add 5 slices (value=50)
-        for (int i = 0; i < 5; i++)
+        // Store last subject (initialize with empty string)
+        NSString *lastSubject = @"";
+
+        // Store last status (initialize with empty string)
+        NSNumber *lastStatus = @"";
+        
+        // Store current slice index (for color and incrementing)
+        NSInteger sliceIndex = 0;
+        
+        // Add slices based on subject and status
+        for (int i = 0; i < [courses count]; i++)
         {
-            NSNumber *one = [NSNumber numberWithInt:50];
-            [_slices addObject:one];
+            
+            // Retrieve course
+            Course *course = [courses objectAtIndex:i];
+            
+            // Check to see if a new slice should be created
+            if (![course.subject.number isEqual:lastSubject] || course.status != lastStatus) {
+                
+                // Set lastSubject
+                lastSubject = course.subject.number;
+                
+                // Set lastStatus
+                lastStatus = course.status;
+                
+                // Create new slice
+                NSNumber *slice = [NSNumber numberWithInt:1];
+                
+                // Set color of slice
+                // ???
+                
+                // Add slice
+                [_slices addObject:slice];
+                
+                // Increment sliceIndex
+                ++sliceIndex;
+            }
+            
+            // Otherwise...
+            else {
+                
+                // Add number to current slice
+                // ???
+            }
         }
     }
     
