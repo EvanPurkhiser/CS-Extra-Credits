@@ -81,7 +81,7 @@
     
     // Sort by course subject, status, number
     NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
-    NSSortDescriptor *sortStatus = [[NSSortDescriptor alloc] initWithKey:@"status" ascending:YES];
+    NSSortDescriptor *sortStatus = [[NSSortDescriptor alloc] initWithKey:@"status" ascending:NO];
     NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
     courseRequest.sortDescriptors = @[sortSubject, sortStatus, sortNumber];
     
@@ -132,7 +132,7 @@
                 else {
                     
                     // Light color (alpha 0.50)
-                    UIColor *color = [course.subject.color colorWithAlphaComponent:0.50];
+                    UIColor *color = [course.subject.color colorWithAlphaComponent:0.75];
                     
                     // Add color to array
                     [_sliceColors addObject:color];
