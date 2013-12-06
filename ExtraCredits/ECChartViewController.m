@@ -128,7 +128,7 @@
             }
             else {
                 
-                // Light color (alpha 0.75)
+                // Light color (alpha 0.80)
                 UIColor *color = [course.subject.color colorWithAlphaComponent:0.80];
                 
                 // Add color to array
