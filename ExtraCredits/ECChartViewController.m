@@ -21,6 +21,7 @@
 @synthesize indexOfSlices = _indexOfSlices;
 @synthesize downArrow = _downArrow;
 @synthesize slices = _slices;
+@synthesize sliceLabels = _sliceLabels;
 @synthesize sliceColors = _sliceColors;
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +36,7 @@
 {
     // Set slices to an array of size 10
     self.slices = [NSMutableArray arrayWithCapacity:10];
+    self.sliceLabels = [NSMutableArray arrayWithCapacity:10];
     
     // Set pie chart properties
     [self.pieChart setDelegate:self];
@@ -135,6 +137,18 @@
                 // Add slice
                 [_slices addObject:slice];
                 
+                // Add slice label
+                NSString *labelStatus;
+                
+                if ([course.status isEqual:COURSE_HAVE_TAKEN]) {
+                    labelStatus = @" (Taken)";
+                }
+                else {
+                    labelStatus = @" (Not Taken)";
+                }
+                
+                [_sliceLabels addObject:[course.subject.name stringByAppendingString:labelStatus]];
+                
                 // Increment sliceIndex
                 ++sliceIndex;
             }
@@ -173,6 +187,9 @@
 {
     // Remove all slices
     [_slices removeAllObjects];
+    
+    // Remove all slice labels
+    [_sliceLabels removeAllObjects];
 }
 
 - (void)viewDidLoad
@@ -267,6 +284,7 @@
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index
 {
     NSLog(@"did select slice at index %lu",(unsigned long)index);
+    NSLog(@"Label at index %lu: %@", (unsigned long)index, [_sliceLabels objectAtIndex:index]);
     self.selectedSliceLabel.text = [NSString stringWithFormat:@"$%@",[self.slices objectAtIndex:index]];
 }
 

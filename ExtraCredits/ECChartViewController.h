@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *indexOfSlices;
 @property (strong, nonatomic) IBOutlet UIButton *downArrow;
 @property(nonatomic, strong) NSMutableArray *slices;
+@property(nonatomic, strong) NSMutableArray *sliceLabels;
 @property(nonatomic, strong) NSArray *sliceColors;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *track;
