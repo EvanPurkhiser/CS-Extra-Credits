@@ -32,4 +32,6 @@
 - (void)addCourses:(NSSet *)values;
 - (void)removeCourses:(NSSet *)values;
 
+- (UIColor *)color;
+
 @end

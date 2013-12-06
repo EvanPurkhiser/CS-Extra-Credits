@@ -16,4 +16,16 @@
 @dynamic number;
 @dynamic courses;
 
+- (UIColor *) color
+{
+    // Horrible way to get a index
+    NSFetchRequest *courseRequest = [NSFetchRequest new];
+    courseRequest.entity = self.entity;
+    NSArray *subjects = [self.managedObjectContext executeFetchRequest:courseRequest error:nil];
+
+    NSUInteger index = [subjects indexOfObject:self];
+
+    return SUBJECT_COLORS[index % [SUBJECT_COLORS count]];
+}
+
 @end
