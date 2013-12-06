@@ -15,11 +15,7 @@
 @implementation ECChartViewController
 
 @synthesize pieChart = _pieChart;
-@synthesize percentageLabel = _percentageLabel;
 @synthesize selectedSliceLabel = _selectedSlice;
-@synthesize numOfSlices = _numOfSlices;
-@synthesize indexOfSlices = _indexOfSlices;
-@synthesize downArrow = _downArrow;
 @synthesize slices = _slices;
 @synthesize sliceLabels = _sliceLabels;
 @synthesize sliceColors = _sliceColors;
@@ -34,7 +30,6 @@
 
 - (void)loadChart
 {
-    
     // Initialize slices to an array of size 10
     self.slices = [NSMutableArray arrayWithCapacity:10];
     
@@ -65,11 +60,7 @@
 {
     // Release pie chart properties (set nil)
     [self setPieChart:nil];
-    [self setPercentageLabel:nil];
     [self setSelectedSliceLabel:nil];
-    [self setIndexOfSlices:nil];
-    [self setNumOfSlices:nil];
-    [self setDownArrow:nil];
 }
 
 - (void)loadSlices
@@ -202,6 +193,9 @@
     
     // Load chart
     [self loadChart];
+    
+    // Center label text
+    self.selectedSliceLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)viewDidUnload
@@ -242,15 +236,6 @@
 {
     // Return YES for supported orientations
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
-}
-
-
-/*
- Currently not implemented, may be useful in the future.
- */
-- (IBAction)showSlicePercentage:(id)sender {
-    UISwitch *perSwitch = (UISwitch *)sender;
-    [self.pieChart setShowPercentage:perSwitch.isOn];
 }
 
 #pragma mark - XYPieChart Data Source
