@@ -34,9 +34,15 @@
 
 - (void)loadChart
 {
-    // Set slices to an array of size 10
+    
+    // Initialize slices to an array of size 10
     self.slices = [NSMutableArray arrayWithCapacity:10];
+    
+    // Initialize slice labels to an array of size 10
     self.sliceLabels = [NSMutableArray arrayWithCapacity:10];
+    
+    // Initialize slice colors to an array of size 10
+    self.sliceColors = [NSMutableArray arrayWithCapacity:10];
     
     // Set pie chart properties
     [self.pieChart setDelegate:self];
@@ -53,14 +59,6 @@
     [self.pieChart setPieRadius:MIN(self.pieChart.frame.size.width/2, self.pieChart.frame.size.height/2) - 10]; // optional
     [self.pieChart setLabelRadius:self.pieChart.pieRadius/1.75]; // optional
     [self.pieChart setLabelFont:[UIFont boldSystemFontOfSize:MAX((int)self.pieChart.pieRadius/10, 20)]]; // optional
-    
-    // Configure colors for first 5 slices
-    self.sliceColors =[NSArray arrayWithObjects:
-                       [UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
-                       [UIColor colorWithRed:129/255.0 green:195/255.0 blue:29/255.0 alpha:1],
-                       [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
-                       [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
-                       [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
 }
 
 - (void)clearChart
@@ -97,7 +95,7 @@
         // Store last subject (initialize with empty string)
         NSString *lastSubject = @"";
 
-        // Store last status (initialize with empty string)
+        // Store last status (initialize with 4)
         NSNumber *lastStatus = [NSNumber numberWithInt:4];
         
         // Store current slice index (for color and incrementing)
@@ -126,12 +124,21 @@
                 if ([course.status  isEqual: COURSE_HAVE_TAKEN]) {
                     
                     // Dark color
-                    // ???
+                    UIColor *color = course.subject.color;
+                    
+                    // Add color to array
+                    [_sliceColors addObject:color];
                 }
                 else {
                     
                     // Light color
+                    UIColor *color = course.subject.color;
+                    
+                    // Modify the alpha
                     // ???
+                    
+                    // Add color to array
+                    [_sliceColors addObject:color];
                 }
                 
                 // Add slice
