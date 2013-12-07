@@ -72,7 +72,7 @@
     
     // Sort by course subject, status, number
     NSSortDescriptor *sortSubject = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
-    NSSortDescriptor *sortStatus = [[NSSortDescriptor alloc] initWithKey:@"status" ascending:NO];
+    NSSortDescriptor *sortStatus = [[NSSortDescriptor alloc] initWithKey:@"status" ascending:YES];
     NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
     courseRequest.sortDescriptors = @[sortSubject, sortStatus, sortNumber];
     
