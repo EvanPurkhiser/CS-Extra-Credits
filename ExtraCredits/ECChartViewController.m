@@ -144,8 +144,14 @@
             if ([course.status isEqual:COURSE_HAVE_TAKEN]) {
                 labelStatus = @" (Taken)";
             }
-            else {
+            else if ([course.status isEqual:COURSE_NOT_TAKEN]) {
                 labelStatus = @" (Not Taken)";
+            }
+            else if ([course.status isEqual:COURSE_WILL_TAKE]) {
+                labelStatus = @" (Will Take)";
+            }
+            else {
+                labelStatus = @" (Won't Take)";
             }
             
             [_sliceLabels addObject:[course.subject.name stringByAppendingString:labelStatus]];
