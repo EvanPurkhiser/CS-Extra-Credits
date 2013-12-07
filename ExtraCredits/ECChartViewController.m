@@ -76,18 +76,18 @@
     NSSortDescriptor *sortNumber  = [[NSSortDescriptor alloc] initWithKey:@"number"  ascending:YES];
     courseRequest.sortDescriptors = @[sortSubject, sortStatus, sortNumber];
     
-    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
-    
     // First item is systems track
     if (self.track.selectedSegmentIndex == 0)
     {
-        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'systems-core'"];
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == %@", @"systems-core"];
     }
     // Second item is management track
     else
     {
-        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == 'management-core'"];
+        courseRequest.predicate = [NSPredicate predicateWithFormat:@"ANY tags.tag == %@", @"management-core"];
     }
+    
+    NSArray *courses = [context executeFetchRequest:courseRequest error:nil];
     
     // Store last subject (initialize with empty string)
     NSString *lastSubject = @"";
@@ -177,6 +177,9 @@
     
     // Remove all slice labels
     [_sliceLabels removeAllObjects];
+    
+    // Remove all slice colors
+    [_sliceColors removeAllObjects];
 }
 
 - (void)viewDidLoad
